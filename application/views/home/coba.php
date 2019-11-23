@@ -11,7 +11,7 @@
 
     <div class="row">
 
-      <!-- <div class="col-lg-3">
+      <div class="col-lg-3">
 
         <h1 class="my-4">Shop Name</h1>
         <div class="list-group">
@@ -20,10 +20,10 @@
           <a href="#" class="list-group-item">Category 3</a>
         </div>
 
-      </div> -->
+      </div>
       <!-- /.col-lg-3 -->
 
-      <div class="col-lg-15">
+      <div class="col-lg-9">
 
         <!--Crousel-->
         <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -34,13 +34,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/1220x350" alt="First slide">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/1220x350" alt="Second slide">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/1220x350" alt="Third slide">
+              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
