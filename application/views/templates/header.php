@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -38,6 +37,6 @@
 				      
 				    </ul>
 				  </div>
-		 `	</div>
+		 </div>
 		</nav>
 	
