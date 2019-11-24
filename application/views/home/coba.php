@@ -1,8 +1,3 @@
-<frameset cols="20%,*" border="0">
-  <frame name="link" src="link.html">
-    <frame name="sites" src="materi.html">
-</frameset>
-<noframes></noframes>
 
 
 
