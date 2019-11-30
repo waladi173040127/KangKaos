@@ -9,13 +9,15 @@
 						</span>
 					</a>
 					<span class="login100-form-title p-b-48">
-						Welcome
+						<h5>Create an Account!</h5>
 					</span>
-					
-
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="name" id="name" data-validate = "The Name field is required.">
+						<span class="focus-input100" data-placeholder="Full Name"></span>
+					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
+						<span class="focus-input100" data-placeholder="Email Adress"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
@@ -25,12 +27,19 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
+					<div class="wrap-input100 validate-input" data-validate="Repeat password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pass">
+						<span class="focus-input100" data-placeholder="Repeat Password"></span>
+					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
-								Login
+								Register Accounts 
 							</button>
 						</div>
 					</div>
@@ -42,10 +51,11 @@
 							</a>
 						</h6>
 						<span class="txt1">
-							Don’t have an account?
+							Already have an account? 
 						</span>
-						<a class="txt2 text-primary" href="<?= base_url('auth/'); ?>registration">
-							Sign Up
+
+						<a class="txt2" href="<?= base_url(); ?>auth">
+							Login!
 						</a>
 					</div>
 				</form>
