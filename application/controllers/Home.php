@@ -5,9 +5,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function index(){
  		$data['judul'] = 'Home2';
  		//$data['nama'] = $nama;
- 		$this->load->view('templates/header', $data);
+ 		$this->load->view('templates/home_header', $data);
  		$this->load->view('home/index');
- 		$this->load->view('templates/footer');
+ 		$this->load->view('templates/home_footer');
  	}
  }
 
