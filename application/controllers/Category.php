@@ -1,12 +1,12 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
- class Menu extends CI_Controller{
+ class Category extends CI_Controller{
 
  	public function index(){
- 		$data['judul'] = 'Page User';
+ 		$data['judul'] = 'Page Category';
  		//$data['nama'] = $nama;
- 		$this->load->view('templates/home_header', $data);
- 		$this->load->view('menu/index');
+ 		$this->load->view('templates/ct_header', $data);
+ 		$this->load->view('category/index');
  		$this->load->view('templates/home_footer');
  	}
  }

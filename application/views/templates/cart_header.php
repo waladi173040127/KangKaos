@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>KangKaos</title>
+<title>Page Cart</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Little Closet template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/bootstrap-4.1.2/bootstrap.min.css">
-<link href="vendor/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/responsive.css">
-
+<link href="<?= base_url('assets/'); ?>plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/cart.css">
+<link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/cart_responsive.css">
 </head>
 <body>
-	
 
 <!-- Menu -->
 
@@ -77,7 +71,7 @@
         <ul class="d-flex flex-row align-items-start justify-content-start">
           <li class="active"><a href="<?= base_url() ?>menu">Women</a></li>
           <li><a href="<?= base_url() ?>menu">Men</a></li>
-          <li><a href="#" >Kids</a></li>
+          <li><a href="#">Kids</a></li>
           <li><a href="#">Home Deco</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -100,7 +94,7 @@
           <a href="<?= base_url() ?>cart">
             <div>
               <img class="svg" src="vendor/images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
-                <div class="bg-danger">4</div>
+                <div>4</div>
             </div>
           </a>
         </div>
