@@ -24,6 +24,7 @@
 <div class="menu">
 
   <!-- Search -->
+
   <div class="menu_search">
     <form action="#" id="menu_search_form" class="menu_search_form">
       <input type="text" class="search_input" placeholder="Search Item" required="required">
@@ -33,7 +34,7 @@
   <!-- Navigation -->
   <div class="menu_nav">
     <ul>
-      <li><a href="<?= base_url() ?>category">Women</a></li>
+      <li><a href="<?= base_url() ?>category">Women2</a></li>
       <li><a href="<?= base_url() ?>menu">Men</a></li>
       <li><a href="<?= base_url() ?>menu">Kids</a></li>
       <li><a href="<?= base_url() ?>menu">Home Deco</a></li>
