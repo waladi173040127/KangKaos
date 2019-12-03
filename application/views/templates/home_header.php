@@ -27,7 +27,7 @@
   <div class="menu_search">
     <form action="#" id="menu_search_form" class="menu_search_form">
       <input type="text" class="search_input" placeholder="Search Item" required="required">
-      <button class="menu_search_button"><img src="vendor/images/search.png" alt=""></button>
+      <button class="menu_search_button"><img src="<?= base_url('assets/'); ?>images/search.png" alt=""></button>
     </form>
   </div>
   <!-- Navigation -->
@@ -43,7 +43,7 @@
   <!-- Contact Info -->
   <div class="menu_contact">
     <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-      <div><div><img src="vendor/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
+      <div><div><img src="<?= base_url('assets/'); ?>images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
       <div>+1 912-252-7350</div>
     </div>
     <div class="menu_social">
@@ -67,7 +67,7 @@
       <div class="logo">
         <a href="#">
           <div class="d-flex flex-row align-items-center justify-content-start">
-            <div><img src="vendor/images/logo_1.png" alt=""></div>
+            <div><img src="<?= base_url('assets/'); ?>images/logo_1.png" alt=""></div>
             <div>Little Closet</div>
           </div>
         </a>  
@@ -87,7 +87,7 @@
         <div class="header_search">
           <form action="#" id="header_search_form">
             <input type="text" class="search_input" placeholder="Search Item" required="required">
-            <button class="header_search_button"><img src="vendor/images/search.png" alt=""></button>
+            <button class="header_search_button"><img src="<?= base_url('assets/'); ?>images/search.png" alt=""></button>
           </form>
         </div>
         <!-- Phone -->
@@ -99,7 +99,7 @@
         <div class="user">
           <a href="<?= base_url() ?>cart">
             <div>
-              <img class="svg" src="vendor/images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
+              <img class="svg" src="<?= base_url('assets/'); ?>images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
                 <div class="bg-danger">4</div>
             </div>
           </a>
@@ -108,7 +108,7 @@
         <div class="user">
           <a href="<?= base_url() ?>auth">
             <div>
-              <img src="vendor/images/user.svg" alt="https://www.flaticon.com/authors/freepik">
+              <img src="<?= base_url('assets/'); ?>images/user.svg" alt="https://www.flaticon.com/authors/freepik">
               
             </div>
           </a>
