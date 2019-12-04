@@ -25,6 +25,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/login/'); ?>css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/login/'); ?>css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/login/'); ?>css/kang.css">
 <!--===============================================================================================-->
 </head>
 <body>

@@ -5,17 +5,19 @@
             
             <!-- About -->
             <div class="col-lg-4 footer_col">
-              <div class="footer_about">
-                <div class="footer_logo">
-                  <a href="#">
-                    <div class="d-flex flex-row align-items-center justify-content-start">
-                      <div class="footer_logo_icon"><img src="<?= base_url('assets/'); ?>images/logo_2.png" alt=""></div>
-                      <div>Little Closet</div>
-                    </div>
-                  </a>    
-                </div>
-                <div class="footer_about_text">
-                  <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+              <div class="container">
+                <div class="footer_about">
+                  <div class="footer_logo">
+                    <a href="#">
+                      <div class="d-flex flex-row align-items-center justify-content-start">
+                        <div class="footer_logo_icon"><img src="<?= base_url('assets/'); ?>images/logo/logo.png" alt="" width="200"></div>
+                        <!-- <div>KangKaos</div> -->
+                      </div>
+                    </a>    
+                  </div>
+                  <div class="footer_about_text">
+                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+                  </div>
                 </div>
               </div>
             </div>
