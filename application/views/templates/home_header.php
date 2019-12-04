@@ -67,9 +67,10 @@
     <div class="header_content d-flex flex-row align-items-center justify-content-start">
       <div class="logo">
         <a href="#">
+          <!-- logo -->
           <div class="d-flex flex-row align-items-center justify-content-start">
-            <div><img src="<?= base_url('assets/'); ?>images/logo_1.png" alt=""></div>
-            <div>Little Closet</div>
+            <div><img src="<?= base_url('assets/'); ?>images/logo/logo.png" alt="" width="150"></div>
+            <!-- <div>Little Closet</div> -->
           </div>
         </a>  
       </div>
