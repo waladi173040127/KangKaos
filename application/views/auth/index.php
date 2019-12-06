@@ -3,14 +3,17 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
+					<!-- logo -->
 					<a href="<?= base_url() ?>home">
-						<span class="login100-form-title p-b-2">
-							<i class="zmdi zmdi-font"></i>
+						<span class="login100-form-title p-b-6">
+							<img src="<?= base_url('assets/') ?>images/logo/kang.png" width="85">
+							<!-- <i class="zmdi zmdi-font"></i> -->
 						</span>
 					</a>
-					<span class="login100-form-title p-b-48">
+					<span class="login100-form-title p-b-48 textColors"  >
 						Welcome
 					</span>
+					<!-- endLOgo -->
 					
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
@@ -37,14 +40,14 @@
 					<hr>
 					<div class="text-center p-t-1">
 						<h6>
-							<a class="txt2" href="<?= base_url('auth/'); ?>forgetPassword">
+							<a class="txt2 textC" href="<?= base_url('auth/'); ?>forgetPassword">
 							Forgot Password?
 							</a>
 						</h6>
 						<span class="txt1">
 							Don’t have an account?
 						</span>
-						<a class="txt2 text-primary" href="<?= base_url('auth/'); ?>registration">
+						<a class="txt2 text-primary bold" href="<?= base_url('auth/'); ?>registration">
 							Sign Up
 						</a>
 					</div>
