@@ -1,8 +1,8 @@
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+			<div class="wrap-login150">
+				
 					<a href="<?= base_url() ?>home">
 						<span class="login100-form-title p-b-2">
 							<i class="zmdi zmdi-font"></i>
@@ -10,35 +10,32 @@
 					</a>
 					<span class="login100-form-title p-b-48">
 						<h5>Create an Account!</h5>
-					</span>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="name" id="name" data-validate = "The Name field is required.">
-						<span class="focus-input100" data-placeholder="Full Name"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Email Adress"></span>
-					</div>
+					</span> 
+					
+				<form class="login100-form validate-form" method="post" action="<?= base_url('auth/registration'); ?>">
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
-					<div class="wrap-input100 validate-input" data-validate="Repeat password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Repeat Password"></span>
-					</div>
+					<div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Full name" value="<?= set_value('name'); ?>">
+                                <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address" value="<?= set_value('email'); ?>">
+                                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Password">
+                                    <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user" id="password2" name="password2" placeholder="Repeat Password">
+                                </div>
+                            </div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" type="submit">
 								Register Accounts 
 							</button>
 						</div>
