@@ -67,7 +67,7 @@
           <div class="col">
             <div class="page_nav">
               <ul class="d-flex flex-row align-items-start justify-content-center">
-                <li class="active"><a href="<?= base_url() ?>menu">Women</a></li>
+                <li class="active"><a href="<?= base_url() ?>produk">Women</a></li>
                 <li><a href="<?= base_url() ?>menu">Men</a></li>
                 <li><a href="category.html">Kids</a></li>
                 <li class=""><a href="category.html" >Home Deco</a></li>
