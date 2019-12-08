@@ -81,18 +81,18 @@
           <!-- Product 1-->
           <div class="col-xl-4 col-md-6">
             <div class="product">
-              <div class="product_image"><img src="<?= base_url('assets/') ?>images/produk/<?= $m['gambar']; ?>" alt="" ></div>
+              <div class="product_image"><img src="<?= base_url('assets/') ?>images/produk/<?= $m['image']; ?>" alt="" ></div>
               <div class="product_content">
                 <div class="product_info d-flex flex-row align-items-start justify-content-start">
                   <div>
                     <div>
-                      <div class="product_name"><a href="product.html"><?= $m['nama_kaos']; ?></a></div>
-                      <div class="product_category">Catagory <a href="category.html"><?= $m['jenis']; ?></a></div>
+                      <div class="product_name"><a href="product.html"><?= $m['name']; ?></a></div>
+                      <div class="product_category">Catagory <a href="category.html"><?= $m['category']; ?></a></div>
                     </div>
                   </div>
                   <div class="ml-auto text-right">
                     <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="product_price text-right">Rp.<?= $m['harga']; ?></div>
+                    <div class="product_price text-right">Rp.<?= $m['price']; ?></div>
                   </div>
                 </div>
                 <div class="product_buttons">
