@@ -90,16 +90,21 @@
                   </div>
                   <div class="ml-auto text-right">
                     <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="product_price text-right">Rp.<?= $m['price']; ?></div>
+                    <div class="product_price text-right"><h4>Rp. <?= number_format($m['price'],0,",",".");?></h4></div>
                   </div>
                 </div>
                 <div class="product_buttons">
+                  
                   <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                    <div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center" data-target="#formModal" data-toggle="modal">
-                      <div><div><img src="<?= base_url('assets/'); ?>/images/heart_2.svg" class="svg" alt="" ><div>+</div></div></div>
+                    <div>
+                      <a class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id'];?>" >
+                        <div><div><img src="<?= base_url('assets/'); ?>/images/heart_2.svg" class="svg" alt="" ><div>+</div></div></div>
+                      </a>
                     </div>
-                    <div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-                      <div><div><img src="<?= base_url('assets/'); ?>/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                    <div >
+                      <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id'];?>">
+                        <div><div><img src="<?= base_url('assets/'); ?>/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -121,10 +126,12 @@
 <!-- super_container -->
 
 <!-- Modal -->
-<div class="modal fade"  id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+<!-- data-target="#formModal" data-toggle="modal" -->
+<!-- <div class="modal fade"  id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" >
     <div class="modal-content" style="width: 100%">
-      <?php foreach ($produk as $m) : ?>
+
+      <?php foreach ($produk as $p) : ?>
       <div class="modal-header">
         <h5 class="modal-title" id="formModalLabel">Produk</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -138,22 +145,22 @@
           </div>
           <div class="col-md-6">
             <div class="card-body">
-              <h3 class="card-title"><?= $m['name'] ?></h3>
-                <h6><span>Rp.</span><?= $m['price'] ;?></h6>
+              <h3 class="card-title"><?= $p['name'] ?></h3>
+                <h6><span>Rp.</span><?= $p['price'] ;?></h6>
                   <small class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
           
-          
-        </div>
-        <div class="row">
-            <a href="" class="btn btn-primary">1</a>
-          </div>
         
-       <?php endforeach; ?>
+        </div>
+        <div class="row ">
+            <a href="<?= base_url('produk/'); ?>detailProduk/<?= $m['id'];?>" class="btn btn-success btn-block">1</a>
+          </div>
+         <?php endforeach; ?>  
+      
     </div>
   </div>
 </div>
-</div>
+</div> -->
 

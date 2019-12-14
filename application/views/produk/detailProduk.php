@@ -17,19 +17,20 @@
 		<div class="col-md-6">
 			<div class="">
 				
-				<img src="http://placehold.it/800x800" class="card-img-top" alt="...">
+				<img src="<?= base_url('assets/') ?>images/produk/<?= $produk2['image']; ?>" class="card-img-top" alt="...">
+			
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="product_info">
-							<div class="product_name">Cool Clothing with Brown Stripes</div>
-							<div class="product_category">In <a href="category.html">Category</a></div>
+							<div class="product_name"><?= $produk2['name']; ?></div>
+							<div class="product_category">In <a href="category.html"><?= $produk2['category']; ?></a></div>
 							<div class="product_rating_container d-flex flex-row align-items-center justify-content-start">
 								<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
 								<div class="product_reviews">4.7 out of (3514)</div>
 								<div class="product_reviews_link"><a href="#">Reviews</a></div>
 							</div>
-							<div class="product_price">$3<span>.99</span></div>
+							<div class="product_price"><h3>Rp. <?= number_format($produk2['price'],0,",",".");?></h3></div>
 							<div class="product_size">
 								<div class="product_size_title">Select Size</div>
 								<ul class="d-flex flex-row align-items-start justify-content-start">
@@ -60,7 +61,7 @@
 								</ul>
 							</div>
 							<div class="product_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.</p>
+								<p><?= $produk2['detail']; ?>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.</p>
 							</div>
 							<div class="product_buttons">
 								<div class="text-right d-flex flex-row align-items-start justify-content-start">
