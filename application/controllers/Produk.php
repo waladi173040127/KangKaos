@@ -70,5 +70,13 @@ class Produk extends CI_Controller
         redirect('produk');
     }
 
+    public function detail($id)
+    {
+        $data['judul'] = 'Detail Data Mahasiswa';
+        $data['produk'] = $this->Produk_model->getProdukById($id);
+        $this->load->view('templates/header', $data);
+        $this->load->view('produk/detail', $data);
+        $this->load->view('templates/footer');
+    }
     
 }

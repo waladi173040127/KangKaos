@@ -38,9 +38,9 @@
                         <td><?= $p['detail']; ?></td>
                         <td class="">
                             <a href="" class="badge badge-success">edit</a>
-                            <a href="" class="badge badge-info">detail</a>
+                            <a href="<?= base_url(); ?>produk/detail/<?= $p['id']; ?>" class="badge badge-primary">detail</a>
                             <a href="<?= base_url(); ?>produk/hapus/<?= $p['id']; ?>" class="badge badge-danger " data-toggle="modal" data-target="#deleteProduk">delete</a>
-                           
+
                         </td>
                     </tr>
                     <?php $i++; ?>
