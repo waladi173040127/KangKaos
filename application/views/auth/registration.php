@@ -2,15 +2,15 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login150">
-				
-					<a href="<?= base_url() ?>home">
-						<span class="login100-form-title p-b-2">
-							<i class="zmdi zmdi-font"></i>
+				<a href="<?= base_url() ?>home">
+						<span class="login100-form-title p-b-10">
+							<img src="<?= base_url('assets'); ?>/images/logo/Kang.png" width=80>
 						</span>
 					</a>
-					<span class="login100-form-title p-b-48">
-						<h5>Create an Account!</h5>
-					</span> 
+					<span class="login100-form-title p-b-30 text-color">
+						Create an Account!
+					</span>
+					 
 					
 				<form class="login100-form validate-form" method="post" action="<?= base_url('auth/registration'); ?>">
 

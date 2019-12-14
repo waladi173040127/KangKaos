@@ -4,17 +4,17 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 					<a href="<?= base_url() ?>home">
-						<span class="login100-form-title p-b-2">
-							<i class="zmdi zmdi-font"></i>
+						<span class="login100-form-title p-b-10">
+							<img src="<?= base_url('assets'); ?>/images/logo/Kang.png" width=80>
 						</span>
 					</a>
-					<span class="login100-form-title p-b-20">
+					<span class="login100-form-title p-b-20 text-color">
 						<h5>Forgot your password ?</h5>
 					</span>
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Enter Email Address"></span>
+						<span class="focus-input100" data-placeholder="Email Address"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
