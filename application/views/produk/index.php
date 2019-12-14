@@ -1,16 +1,11 @@
 <!-- Begin Page Content -->
-<div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
-
-    <div class="">
+<div class="container">
+<!-- Page Heading -->
+    <div class="row">
         <div class="col-sm">
-            
-
             <?= $this->session->flashdata('message'); ?>
              <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#dataProduk">Add New Produk</a>
-            <table class="table table-hover">
+             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -21,7 +16,7 @@
                         <th scope="col">Harga</th>
                         <th scope="col">Stok</th>
                         <th scope="col">Detail</th>
-                        <th scope="col" width="">Action</th>
+                        <th scope="" width="">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,10 +42,10 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-
-
         </div>
     </div>
+    
+   
 
 </div>
 <!-- /.container-fluid -->

@@ -2,26 +2,32 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				
+				<form class="login100-form validate-form" method="post" action="<?= base_url('auth'); ?>">
 					<a href="<?= base_url() ?>home">
-						<span class="login100-form-title p-b-2">
-							<i class="zmdi zmdi-font"></i>
+						<span class="login100-form-title p-b-10">
+							<img src="<?= base_url('assets'); ?>/images/logo/Kang.png" width=80>
 						</span>
 					</a>
-					<span class="login100-form-title p-b-48">
+					<span class="login100-form-title p-b-30 text-color">
 						Welcome
 					</span>
 				 <?= $this->session->flashdata('message'); ?>
  
-                <form class="user" method="post" action="<?= base_url('auth'); ?>">
-                    <div class="form-group ">
-                        <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email Address..." value="<?= set_value('email'); ?>">
-                           <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-                    </div>
-                    <div class="form-group">
-                         <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
-                            <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
-                     </div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						
+						<input class="input100" type="text" id="email" name="email" value="<?= set_value('email'); ?>">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						
+						<input class="input100" type="password" name="password" id="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
@@ -31,6 +37,7 @@
 							</button>
 						</div>
 					</div>
+
 					<hr>
 					<div class="text-center p-t-1">
 						<h6>
