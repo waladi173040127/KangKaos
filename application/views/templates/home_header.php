@@ -64,10 +64,14 @@
           </div> -->
           <!-- Cart -->
           <div class="user">
+           <h4>
+              
+           </h4>
             <a href="<?= base_url() ?>cart">
               <div>
                 <img class="svg" src="<?= base_url('assets/'); ?>images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
-                  <div class="bg-danger">4</div>
+                  <?=
+                $keranjang = '<div class="bg-danger">'.$this->cart->total_items().'</div>' ?>
               </div>
             </a>
           </div>

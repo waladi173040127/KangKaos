@@ -102,9 +102,11 @@
                       </a>
                     </div>
                     <div >
-                      <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id'];?>">
+        
+
+                      <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('cart') ?>/keranjang/<?= $m['id'];?>">
                         <div><div><img src="<?= base_url('assets/'); ?>/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
-                      </a>
+                      </a> 
                     </div>
                   </div>
                 </div>

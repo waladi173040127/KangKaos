@@ -14,4 +14,15 @@ class Produk_model extends CI_Model
 	{
 		return $this->db->get_where('produk', ['id' => $id])->row_array();
 	}
+
+	public function find($id){
+		$result= $this->db->where('id', $id)
+							->limit(1)
+							->get('produk');
+		if ($result->num_rows() >0) {
+			return $result->row();
+		}else{
+			return array();
+		}
+	}
 }
