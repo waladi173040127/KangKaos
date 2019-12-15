@@ -9,7 +9,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
  	public function index(){
  		$data['title'] = 'Page Cart';
- 		//$data['nama'] = $nama;
  		$this->load->view('templates/cart_header', $data);
  		$this->load->view('cart/index');
  		$this->load->view('templates/cart_footer');
@@ -27,6 +26,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->cart->insert($data);
 			redirect('home');
  	}
+ 	public function detail_cart(){
+ 		$data['title'] = 'Page Cart';
+ 		$this->load->view('templates/cart_header', $data);
+ 		$this->load->view('cart/detail_cart');
+ 		$this->load->view('templates/cart_footer');
+ 	}
+
  }
 
   ?>

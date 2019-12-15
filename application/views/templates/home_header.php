@@ -65,9 +65,8 @@
           <!-- Cart -->
           <div class="user">
            <h4>
-              
            </h4>
-            <a href="<?= base_url() ?>cart">
+            <a href="<?= base_url() ?>cart/detail_cart">
               <div>
                 <img class="svg" src="<?= base_url('assets/'); ?>images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
                   <?=
