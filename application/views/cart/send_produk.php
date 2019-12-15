@@ -37,12 +37,12 @@
 							<input type="text" name="nama" placeholder="Full name" class="form-control">
 						</div>
 						<div class="form-group">
-							<label>Address</label>
-							<input type="text" name="address" placeholder="Addresss" class="form-control">
+							<label>Alamat</label>
+							<input type="text" name="alamat" placeholder="alamat" class="form-control">
 						</div>
 						<div class="form-group">
 							<label>No Handphone</label>
-							<input type="text" name="noHP" placeholder="your Phone" class="form-control">
+							<input type="text" name="noHp" placeholder="your Phone" class="form-control">
 						</div>
 						<div class="form-group">
 							<label>Jasa Pengiriman</label>
