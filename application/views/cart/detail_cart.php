@@ -17,7 +17,8 @@
 			</div>
 		</div>
 		<!-- ENDHome -->
-		<h4>Keranjang</h4>
+		<div class="container">
+			<h4>Keranjang</h4>
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
 				<th>NO</th>
@@ -42,6 +43,12 @@
 					<td align="right">RP.<?=  number_format($this->cart->total() ,0,",",".") ?> </td>
 				</tr>
 		</table>
+			<div align="right">
+				<a class="btn btn-warning" href="<?= base_url('cart') ?>/delete_cart">Delete</a>
+				<a class="btn btn-info" href="<?= base_url('home') ?>">Belanja</a>
+				<a class="btn btn-warning" href="<?= base_url('cart') ?>/pay_produk">Pembayaran</a>
+			</div>
 
+		</div>
 	</div>
 </div>
