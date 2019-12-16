@@ -15,15 +15,14 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/responsive.css">
 
-<link rel="icon" type="image/png" href="<?= base_url('assets') ?>/images/logo/logo.png">
+<link rel="icon" type="image/png" href="<?= base_url('assets') ?>/images/logo/kang.png">
 
 
 </head>
 <body>
 	
-
-
-
+<div class="container">
+    
 <div class="menu">
   <div class="super_container">
 
@@ -140,3 +139,5 @@
   </div>
 </div>
 <!-- Menu -->
+</div>
+
