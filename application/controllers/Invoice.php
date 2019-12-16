@@ -17,6 +17,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$this->load->view('invoice/index', $data);
         $this->load->view('templates/footer');
  	}
+
+ 	public function detail_invoice($id_invoice){
+ 		$data['title'] = 'Page Invoice';
+ 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+ 		$data['invoice'] = $this->Invoice_model->ambil_id_invoice($id_invoice);
+ 		$data['pesanan'] = $this->Invoice_model->ambil_id_pesanan($id_invoice);
+ 		 $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+ 		$this->load->view('invoice/detail_invoice', $data);
+        $this->load->view('templates/footer');
+ 	}
+ 	
  }
 
   ?>
