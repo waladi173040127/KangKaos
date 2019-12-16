@@ -12,6 +12,7 @@
 						Welcome
 					</span>
 				 <?= $this->session->flashdata('message'); ?>
+				 <?= $this->session->flashdata('message2'); ?>
  
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">

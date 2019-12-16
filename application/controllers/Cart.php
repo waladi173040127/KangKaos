@@ -40,10 +40,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	}
 
  	public function pay_produk(){
- 		$data['title'] = 'Pay Produk';
- 		$this->load->view('templates/cart_header', $data);
- 		$this->load->view('cart/pay_produk');
- 		$this->load->view('templates/cart_footer');
+         if ($this->session->userdata('email')) {
+            $data['title'] = 'Pay Produk';
+        $this->load->view('templates/cart_header', $data);
+        $this->load->view('cart/pay_produk');
+        $this->load->view('templates/cart_footer');
+        } else {
+            $this->session->set_flashdata('message2', '<div class="alert alert-success" role="alert">please, login before you pay your produk !</div>');
+        redirect('auth');
+            redirect('auth/index');
+
+        }
+ 		
+
  	}
  	public function send_produk(){
  		$data['title'] = 'Send Proudk';
