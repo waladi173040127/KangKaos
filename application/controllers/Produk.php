@@ -70,6 +70,7 @@ class Produk extends CI_Controller
         redirect('produk');
     }
 
+
     public function detailProduk($id){
        
         $data['title'] = 'Detail Produk';
