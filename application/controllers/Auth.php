@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	public function index(){
          if ($this->session->userdata('email')) {
+            
             redirect('user');
         }
 

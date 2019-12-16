@@ -15,14 +15,14 @@
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>styles/responsive.css">
 
+<link rel="icon" type="image/png" href="<?= base_url('assets') ?>/images/logo/kang.png">
 
 
 </head>
 <body>
 	
-
-
-
+<div class="container">
+    
 <div class="menu">
   <div class="super_container">
 
@@ -63,14 +63,20 @@
             <div>-</div>
           </div> -->
           <!-- Cart -->
+          <?php if($this->session->userdata('role_id')  == 2) : ?>
           <div class="user">
-            <a href="<?= base_url() ?>cart">
+           <h4>
+           </h4>
+            <a href="<?= base_url() ?>cart/detail_cart">
               <div>
                 <img class="svg" src="<?= base_url('assets/'); ?>images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
-                  <div class="bg-danger">4</div>
+                  <?=
+                $keranjang = '<div class="bg-danger">'.$this->cart->total_items().'</div>' ?>
               </div>
             </a>
           </div>
+          <!-- endCart -->
+        <?php endif; ?>
           <!-- User -->
           <div class="user">
             <a   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -133,3 +139,5 @@
   </div>
 </div>
 <!-- Menu -->
+</div>
+

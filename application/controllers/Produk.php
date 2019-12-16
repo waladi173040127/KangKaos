@@ -17,7 +17,6 @@ class Produk extends CI_Controller
         $this->load->model('Produk_model', 'produk');
        // $data['index'] = $this->produk->getAllProduk();
         $data['produk'] = $this->db->get('produk')->result_array();
-        $data['produk2'] = $this->Produk_model->getProdukById($id);
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('size', 'Size', 'required');
         $this->form_validation->set_rules('price', 'Price', 'required');
@@ -63,20 +62,20 @@ class Produk extends CI_Controller
         }
        
     }
-    public function hapus($id)
+    public function hapus($id_brg)
     {
-        $this->Produk_model->delete($id);
+        $this->Produk_model->delete($id_brg);
        // $this->db->delete('produk', ['id' => $id]);
         redirect('produk');
     }
 
 
-    public function detailProduk($id){
-       
+    public function detailProduk($id_brg){
+
         $data['title'] = 'Detail Produk';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['produk'] = $this->db->get('produk')->result_array();
-        $data['produk2'] = $this->Produk_model->getProdukById($id);
+        $data['produk2'] = $this->Produk_model->getProdukById($id_brg);
         $this->load->view('templates/cart_header', $data);
         $this->load->view('produk/detailProduk', $data);
         $this->load->view('templates/cart_footer');
