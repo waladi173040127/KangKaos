@@ -14,10 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$this->load->view('cart/index');
  		$this->load->view('templates/cart_footer');
  	}
- 	public function keranjang($id){
- 		$barang = $this->Produk_model->find($id);
+ 	public function keranjang($id_brg){
+ 		$barang = $this->Produk_model->find($id_brg);
  		$data = array(
-        'id'      => $barang->id,
+        'id'      => $barang->id_brg,
         'qty'     => 1,
         'price'   => $barang->price,
         'name'    => $barang->name

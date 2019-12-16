@@ -11,12 +11,13 @@
 		</tr>
 		<?php foreach($invoice as $iv) : ?>
 			<tr>
-				<td><?= $iv->id ?></td>
+				<td><?= $iv->id_invoice?></td>
 				<td><?= $iv->nama?></td>
+
 				<td><?= $iv->alamat ?></td>
 				<td><?= $iv->tgl_pesan?></td>
 				<td><?= $iv->batas_bayar ?></td>
-				<td><a class="btn btn-primary text-light" href="<?= base_url('invoice/'); ?>detail_invoice/<?= $iv->id ?>">Detail</a></td>
+				<td><a class="btn btn-primary text-light" href="<?= base_url('invoice/'); ?>detail_invoice/<?= $iv->id_invoice ?>">Detail</a></td>
 			</tr>
 		<?php endforeach; ?>
 	</table>

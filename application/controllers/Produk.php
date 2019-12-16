@@ -62,14 +62,14 @@ class Produk extends CI_Controller
         }
        
     }
-    public function hapus($id)
+    public function hapus($id_brg)
     {
-        $this->Produk_model->delete($id);
+        $this->Produk_model->delete($id_brg);
        // $this->db->delete('produk', ['id' => $id]);
         redirect('produk');
     }
 
-    public function detailProduk($id){
+    public function detailProduk($id_brg){
        
         $data['title'] = 'Detail Produk';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();

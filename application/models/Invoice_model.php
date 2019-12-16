@@ -42,7 +42,8 @@ class Invoice_model extends CI_Model
 	}
 
 	public function ambil_id_invoice($id_invoice){
-		$result = $this->db->where('id', $id_invoice)->limit(
+		//barang ????
+		$result = $this->db->where('id_invoice', $id_invoice)->limit(
 				1)->get('invoice');
 		if ($result->num_rows() > 0) {
 			return $result->row();

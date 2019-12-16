@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h4>Detail Pesanan <div class="btn btn-sm btn-success">No. Invoice: <?= $invoice->id ?></div></h4>
+	<h4>Detail Pesanan <div class="btn btn-sm btn-success">No. Invoice: <?= $invoice->id_invoice ?></div></h4>
 	<table class="table table-bordered table-striped table-hover">
 		<tr>
 			<th>ID Produk</th>
@@ -15,7 +15,7 @@
 				$total += $subTotal;
 		 ?>
 		 <tr>
-		 	<td><?= $psn->id ?></td>
+		 	<td><?= $psn->id_brg ?></td>
 		 	<td><?= $psn->name ?></td>
 		 	<td><?= $psn->jumlah ?></td>
 		 	<td><?= number_format($psn->harga,0,',','.' ) ?></td>
