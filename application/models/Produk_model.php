@@ -10,6 +10,7 @@ class Produk_model extends CI_Model
 	public function delete($id_brg){
         $this->db->delete('produk', ['id_brg' => $id_brg]);
     }
+
     public function getProdukById($id_brg)
 	{
 		return $this->db->get_where('produk', ['id_brg' => $id_brg])->row_array();
@@ -25,4 +26,7 @@ class Produk_model extends CI_Model
 			return array();
 		}
 	}
+
+
+
 }

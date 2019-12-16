@@ -69,8 +69,9 @@ class Produk extends CI_Controller
         redirect('produk');
     }
 
+
     public function detailProduk($id_brg){
-       
+
         $data['title'] = 'Detail Produk';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['produk'] = $this->db->get('produk')->result_array();
