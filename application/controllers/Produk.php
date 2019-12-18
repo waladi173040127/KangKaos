@@ -80,5 +80,54 @@ class Produk extends CI_Controller
         $this->load->view('produk/detailProduk', $data);
         $this->load->view('templates/cart_footer');
     }
+
+      public function detailProduk($id){
+
+        $data['title'] = 'Detail Produk';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['produk'] = $this->db->get('produk')->result_array();
+        $data['produk2'] = $this->Produk_model->getProdukById($id_brg);
+        $this->load->view('templates/cart_header', $data);
+        $this->load->view('produk/detailProduk', $data);
+        $this->load->view('templates/cart_footer');
+    }
+
+    public function edit($id){
+        $where = array('id' => $id);
+        $data['produk'] = $this->Produk_model->edit_produk($where, 'produk')->result();
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar', $data);
+            $this->load->view('templates/topbar', $data);
+            $this->load->view('produk/editProduk', $data);
+            $this->load->view('templates/footer');
+    }
+    public function update(){
+        $id = $this->input->post('id');
+        $name = $this->input->post('name');
+        $price = $this->input->post('price');
+        $category = $this->input->post('category');
+        $size = $this->input->post('size');
+        $detail = $this->input->post('detail');
+        $stock = $this->input->post('stock');
+        $image = $this->input->post('image');
+
+        $data = array(
+
+            'name' => $name,
+            'price' => $price,
+            'category' => $category,
+            'size' => $size,
+            'detail' => $detail,
+            'stock' => $stock,
+            'image' => $image
+        );
+
+        $where = array(
+            'id' => $id
+        );
+
+        $this->Produk_model->update_data($where,$data, 'produk');
+        redirect('Produk');
+    }
     
 }
