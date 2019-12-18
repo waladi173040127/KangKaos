@@ -7,6 +7,7 @@ class Invoice_model extends CI_Model
 	public function index(){
 		date_default_timezone_set('Asia/Jakarta');
 		$nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
 		
 
 		$invoice = array(
@@ -61,4 +62,8 @@ class Invoice_model extends CI_Model
 		}
 	}
 
+	public function delete_invoice($where, $table){
+        $this->db->where($where);
+		$this->db->delete($table);
+    }
 }

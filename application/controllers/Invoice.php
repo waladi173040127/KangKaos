@@ -30,6 +30,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$this->load->view('invoice/detail_invoice', $data);
         $this->load->view('templates/footer');
  	}
+      public function delete_invoice($id_invoice)
+    {
+        $where = array('id_invoice' => $id_invoice);
+         $this->Invoice_model->delete_invoice($where,'invoice');
+        redirect('invoice');
+    }
  	
  }
 

@@ -5,10 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     {
         parent::__construct();
         is_logged_in();
+           $this->load->model('Produk_model');
     }
  	public function index(){
- 		$data['title'] = 'Dashboard';
+ 		$data['title'] = 'Produk KangKaos';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['produk'] = $this->Produk_model->tampil_data()->result();
        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

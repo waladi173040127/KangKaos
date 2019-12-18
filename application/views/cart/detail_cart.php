@@ -76,13 +76,14 @@
             <form method="post" action="<?= base_url('cart') ?>/send_produk">
             	<div class="form-group">
             		<label>Full Name</label>
-            		<input type="text" name="nama" placeholder="Full name" class="form-control" value="<?= set_value('nama'); ?>">
+            		<input type="text"  name="nama" placeholder="Full name" class="form-control" value="<?= set_value('nama'); ?>">
             		<?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
             	</div>
             	<div class="form-group">
-            		<label>Address</label>
-            		<input type="text" name="address" placeholder="Addresss" class="form-control">
-            	</div>
+                <label>Full Name</label>
+                <input type="text" name="alamat" placeholder="Full name" class="form-control" value="<?= set_value('alamat'); ?>">
+                <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+              </div>
             	<div class="form-group">
             		<label>No Handphone</label>
             		<input type="text" name="noHP" placeholder="your Phone" class="form-control">
@@ -120,7 +121,7 @@
           
         </div>
       </div>
-    </div>
+
 
 
 

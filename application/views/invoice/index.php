@@ -17,7 +17,10 @@
 				<td><?= $iv->alamat ?></td>
 				<td><?= $iv->tgl_pesan?></td>
 				<td><?= $iv->batas_bayar ?></td>
-				<td><a class="btn btn-primary text-light" href="<?= base_url('invoice/'); ?>detail_invoice/<?= $iv->id_invoice ?>">Detail</a></td>
+				<td>
+					<a class="btn btn-primary text-light" href="<?= base_url('invoice/'); ?>detail_invoice/<?= $iv->id_invoice ?>">Detail</a>
+					<a class="btn btn-danger text-light" href="<?= base_url('invoice/'); ?>delete_invoice/<?= $iv->id_invoice ?>">Delete</a>
+				</td>
 			</tr>
 		<?php endforeach; ?>
 	</table>
