@@ -63,7 +63,7 @@
             <div>-</div>
           </div> -->
           <!-- Cart -->
-          <?php if($this->session->userdata('role_id')  == 2) : ?>
+        
           <div class="user">
            <h4>
            </h4>
@@ -76,7 +76,7 @@
             </a>
           </div>
           <!-- endCart -->
-        <?php endif; ?>
+        
           <!-- User -->
           <div class="user">
             <a   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
