@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function __construct()
     {
         parent::__construct();
-       // $this->load->library('form_validation');
+       $this->load->library('form_validation');
         $this->load->model('Produk_model');
         $this->load->model('Invoice_model');
     }
@@ -30,10 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	}
  	public function delete_cart(){
  		$this->cart->destroy();
- 		redirect('home');
+ 		redirect('cart/detail_cart');
  	}
 
  	public function pay_produk(){
+        $this->form_validation->set_rules('nama', 'Name', 'required|trim');
          if ($this->session->userdata('email')) {
             $data['title'] = 'Pay Produk';
         $this->load->view('templates/home_header', $data);
@@ -50,13 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	}
  	public function send_produk(){
  		$data['title'] = 'Send Proudk';
- 		
+ 		$data['title2'] = 'Your Cart';
  		$is_processed = $this->Invoice_model->index();
  		if ($is_processed) {
  			$this->cart->destroy();
- 			$this->load->view('templates/home_header', $data);
+ 			// $this->load->view('templates/home_header', $data);
 	 		$this->load->view('cart/send_produk');
-	 		$this->load->view('templates/home_footer');
+	 		// $this->load->view('templates/home_footer');
  		} else {
  			echo "Maat pesananan anda gagal diproses";
  		}

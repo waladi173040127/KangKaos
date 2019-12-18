@@ -1,23 +1,4 @@
-<div class="super_container_inner">
-	<div class="super_overlay"></div>
-
-		<!-- Home -->
-
-		<div class="home">
-			<div class="home_container d-flex flex-column align-items-center justify-content-end">
-				<div class="home_content text-center">
-					<div class="home_title">Shopping Cart</div>
-					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
-						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="<?=base_url() ?>home">Home</a></li>
-							<li>Your Cart</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ENDHome -->
-		<div class="container">
+<div class="container">
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
@@ -73,5 +54,3 @@
 				<div class="col-md-2"></div>
 			</div>
 		</div>
-	</div>
-</div>
