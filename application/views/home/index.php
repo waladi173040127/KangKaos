@@ -1,8 +1,4 @@
-
-  <div class="super_container_inner">
-    <div class="super_overlay"></div>
     <!-- Home -->
-
     <div class="home">
       <!--Crousel-->
         <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
@@ -31,8 +27,7 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <!-- Home Slider Dots -->
-        
+        <!-- Home Slider Dots -->  
         <div class="home_slider_dots_container">
           <div class="container">
             <div class="row">
@@ -51,11 +46,8 @@
         </div>
         <!-- Home Slider Dots -->
       </div>
-      <!-- home_slider_container -->
-    </div>  
     <!-- edHome -->
     <!-- Products -->
-
     <div class="products">
       <div class="container">
         <div class="row">
@@ -67,15 +59,15 @@
           <div class="col">
             <div class="page_nav">
               <ul class="d-flex flex-row align-items-start justify-content-center">
-                <li class="active"><a href="<?= base_url() ?>produk">Women</a></li>
-                <li><a href="<?= base_url() ?>menu">Men</a></li>
+                <li class="active"><a href="<?= base_url('category/') ?>woman">Women</a></li>
+                <li><a href="<?= base_url('category/') ?>/man">Men</a></li>
               </ul>
             </div>
           </div>
         </div>
+        <!-- Produk- -->
         <div class="row products_row">
-          <?php foreach ($produk as $m) : ?>
-                      
+          <?php foreach ($produk as $m) : ?>            
           <!-- Product 1-->
           <div class="col-xl-4 col-md-6">
             <div class="product">
@@ -97,13 +89,11 @@
                   
                   <div class="text-right d-flex flex-row align-items-start justify-content-start">
                     <div>
-                      <a class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id_brg'];?>" >
+                      <a class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id_brg'];?>">
                         <div><div><img src="<?= base_url('assets/'); ?>/images/heart_2.svg" class="svg" alt="" ><div>+</div></div></div>
                       </a>
                     </div>
                     <div >
-        
-
                       <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('cart') ?>/keranjang/<?= $m['id_brg'];?>">
                         <div><div><img src="<?= base_url('assets/'); ?>/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
                       </a> 
@@ -117,15 +107,9 @@
          <?php endforeach; ?>
         </div>
       </div><!-- endContainerProduk -->
-    </div><!-- endProduk -->
-    <!-- Footer -->
-
-    
-  </div>
-  <!-- super_container_inner -->
-    
-</div>
-<!-- super_container -->
+      
+    </div>
+    <!-- endProduk -->
 
 <!-- Modal -->
 <!-- data-target="#formModal" data-toggle="modal" -->
