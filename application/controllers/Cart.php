@@ -8,12 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->load->model('Produk_model');
         $this->load->model('Invoice_model');
     }
- 	public function index(){
- 		$data['title'] = 'Page Cart';
- 		$this->load->view('templates/cart_header', $data);
- 		$this->load->view('cart/index');
- 		$this->load->view('templates/cart_footer');
- 	}
+    public function detail_cart(){
+        $data['title'] = 'Page Cart';
+        $data['title2'] = 'Your Cart';
+        $this->load->view('templates/home_header', $data);
+        $this->load->view('cart/detail_cart');
+        $this->load->view('templates/home_footer');
+    }
  	public function keranjang($id_brg){
  		$barang = $this->Produk_model->find($id_brg);
  		$data = array(
@@ -27,13 +28,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->cart->insert($data);
 			redirect('home');
  	}
- 	public function detail_cart(){
- 		$data['title'] = 'Page Cart';
- 		$this->load->view('templates/cart_header', $data);
- 		$this->load->view('cart/detail_cart');
- 		$this->load->view('templates/cart_footer');
- 	}
-
  	public function delete_cart(){
  		$this->cart->destroy();
  		redirect('home');
@@ -42,9 +36,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function pay_produk(){
          if ($this->session->userdata('email')) {
             $data['title'] = 'Pay Produk';
-        $this->load->view('templates/cart_header', $data);
+        $this->load->view('templates/home_header', $data);
         $this->load->view('cart/pay_produk');
-        $this->load->view('templates/cart_footer');
+        $this->load->view('templates/home_footer');
         } else {
             $this->session->set_flashdata('message2', '<div class="alert alert-success" role="alert">please, login before you pay your produk !</div>');
         redirect('auth');
@@ -60,9 +54,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$is_processed = $this->Invoice_model->index();
  		if ($is_processed) {
  			$this->cart->destroy();
- 			$this->load->view('templates/cart_header', $data);
+ 			$this->load->view('templates/home_header', $data);
 	 		$this->load->view('cart/send_produk');
-	 		$this->load->view('templates/cart_footer');
+	 		$this->load->view('templates/home_footer');
  		} else {
  			echo "Maat pesananan anda gagal diproses";
  		}

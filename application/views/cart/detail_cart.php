@@ -1,24 +1,15 @@
-<div class="super_container_inner">
-	<div class="super_overlay"></div>
+<div class="products">
+    <div class="container">
+      <br>
+      <div class="row hm">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section_title text-center"><?= $title2 ?></div>
 
-		<!-- Home -->
-
-		<div class="home">
-			<div class="home_container d-flex flex-column align-items-center justify-content-end">
-				<div class="home_content text-center">
-					<div class="home_title">Shopping Cart</div>
-					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
-						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="<?=base_url() ?>home">Home</a></li>
-							<li>Your Cart</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- ENDHome -->
-		<div class="container">
-			<h4>Keranjang</h4>
+        </div>
+      </div>
+      <br> <hr>	
+      <div class="row">
+      	<div class="container">
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
 				<th>NO</th>
@@ -39,16 +30,18 @@
 				
 			<?php endforeach; ?>
 			<tr>
-				<td colspan="4"></td>
+			<td colspan="4"></td>
 					<td align="right">RP.<?=  number_format($this->cart->total() ,0,",",".") ?> </td>
-				</tr>
+			</tr>
 		</table>
+		<div align="right">
 			<div align="right">
-				<a class="btn btn-warning" href="<?= base_url('cart') ?>/delete_cart">Delete</a>
-				<a class="btn btn-info" href="<?= base_url('home') ?>">Belanja</a>
-				<a class="btn btn-warning" href="<?= base_url('cart') ?>/pay_produk">Pembayaran</a>
+				<a class="example_aa" href="<?= base_url('cart') ?>/delete_cart">Clear</a>
+				<a class="example_primary" href="<?= base_url('home') ?>">shopping</a>
+				<a class="example_a" href="<?= base_url('cart') ?>/pay_produk">Buy</a>
 			</div>
-
 		</div>
-	</div>
+</div>  
+      </div>
+</div>
 </div>
