@@ -11,9 +11,9 @@
         <div class="col-lg-3">
           <ul class="list-group list-group-flush">
             <h4 class="text-center">Category</h4>
-            <li class="list-group-item"><i class="fas fa-home"></i> / <a href="<?= base_url('category/woman') ?>">All</a></li>
-            <li class="list-group-item "><i class="fas fa-female"></i> / <a href="<?= base_url('category/woman') ?>">Woman</a></li>
-            <li class="list-group-item"><i class="fas fa-male"></i> / <a href="<?= base_url('category/woman') ?>">Man</a></li>
+            <li class="list-group-item"><i class="fas fa-home mr-2 text-gray-400"></i> / <a href="<?= base_url('category/woman') ?>">All</a></li>
+            <li class="list-group-item mr-2 text-gray-400"><i class="fas fa-female"></i> / <a href="<?= base_url('category/woman') ?>">Woman</a></li>
+            <li class="list-group-item mr-2 text-gray-400"><i class="fas fa-male"></i> / <a href="<?= base_url('category/woman') ?>">Man</a></li>
           </ul>
         </div>
         <div class="row products_row col-lg-9">

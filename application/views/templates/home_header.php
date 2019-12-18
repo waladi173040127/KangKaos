@@ -109,6 +109,37 @@
             </div>
             <!-- endCart -->
             <!-- User -->
+             <?php if($this->session->userdata('role_id')  == 2) { ?>
+              <div class="user">
+                <a   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <div>
+                    <img class="img-profile rounded-circle" src="<?= base_url('assets/images/profile/') . $user['image']; ?>"> 
+                  </div>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="<?= base_url('auth') ;?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>My Profile</a>
+                  <a class="dropdown-item" href="<?= base_url('cart/') ;?>detail_cart"><i class="fas fa-cart-arrow-down mr-2 text-gray-400"></i> My Cart</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                </div>
+              </div>
+              <?php }elseif ($this->session->userdata('role_id')  == 1) { ?>
+                <div class="user">
+                <a   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <div>
+                    <img class="rounded-circle" src="<?= base_url('assets/images/profile/') . $user['image']; ?>"> 
+                  </div>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="<?= base_url('auth') ;?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Dasboard</a>
+                  <a class="dropdown-item" href="<?= base_url('cart/') ;?>detail_cart"><i class="fas fa-cart-arrow-down mr-2 text-gray-400"></i> My Cart</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                </div>
+              </div>
+             <?php } else { ?>
             <div class="user">
               <a   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div>
@@ -117,11 +148,12 @@
               </a>
               <!-- Dropdown - User Information -->
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="<?= base_url('auth') ;?>/registration">Register</a>
+                  <a class="dropdown-item" href="<?= base_url('auth') ;?>/registration"><i class="far fa-address-book mr-2 text-gray-400"></i>Register</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="<?= base_url('auth') ;?>">Login</a>
+                  <a class="dropdown-item" href="<?= base_url('auth') ;?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Login</a>
                 </div>
             </div>
+            <?php } ?>
           </div>
         </div>
       </header>

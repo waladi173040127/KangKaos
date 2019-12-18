@@ -11,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     public function detail_cart(){
         $data['title'] = 'Page Cart';
         $data['title2'] = 'Your Cart';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('templates/home_header', $data);
         $this->load->view('cart/detail_cart');
         $this->load->view('templates/home_footer');
@@ -36,20 +37,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function pay_produk(){
         $this->form_validation->set_rules('nama', 'Name', 'required|trim');
          if ($this->session->userdata('email')) {
+             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
             $data['title'] = 'Pay Produk';
-        $this->load->view('templates/home_header', $data);
-        $this->load->view('cart/pay_produk');
-        $this->load->view('templates/home_footer');
+            $this->load->view('templates/home_header', $data);
+            $this->load->view('cart/pay_produk');
+            $this->load->view('templates/home_footer');
         } else {
             $this->session->set_flashdata('message2', '<div class="alert alert-success" role="alert">please, login before you pay your produk !</div>');
         redirect('auth');
-            redirect('auth/index');
-
         }
- 		
-
  	}
  	public function send_produk(){
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
  		$data['title'] = 'Send Proudk';
  		$data['title2'] = 'Your Cart';
  		$is_processed = $this->Invoice_model->index();

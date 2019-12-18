@@ -1,58 +1,43 @@
-<!-- Begin Page Content -->
-<div class="container">
-<!-- Page Heading -->
-    <div class="row">
-        <div class="col-sm">
-            <?= $this->session->flashdata('message'); ?>
-             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#dataProduk">Add New Produk</a>
-             <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Nama_kaos</th>
-                        <th scope="col">Jenis</th>
-                        <th scope="col">Ukuran</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">Stok</th>
-                        <th scope="col">Detail</th>
-                        <th scope="" width="">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 1; ?>
-                    <?php foreach ($produk as $p) : ?>
-                    <tr>
-                        <th scope="row"><?= $i; ?></th>
-                        <td><img src="<?= base_url('assets/') ?>images/produk/<?= $p['image']; ?>" width=50></td>
-                        <td><?= $p['name']; ?></td>
-                        <td><?= $p['category']; ?></td>
-                        <td><?= $p['size']; ?></td>
-                        <td><?= $p['price']; ?></td>
-                        <td><?= $p['stock']; ?></td>
-                        <td><?= $p['detail']; ?></td>
-                        <td class="">
-                            <a href="" class="badge badge-success">edit</a>
-
-                            <a href="" class="badge badge-info">detail</a>
-                            <a href="<?= base_url(); ?>produk/hapus/<?= $p['id_brg']; ?>" class="badge badge-danger " data-toggle="modal" data-target="#deleteProduk">delete</a>
-                
-                        </td>
-                    </tr>
-                    <?php $i++; ?>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    
-   
-
+<div class="container-fluid">
+    <?= $this->session->flashdata('message'); ?>
+    <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#dataProduk"><i class="fas fa-plus fa-sm"></i>Add New Produk</a>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name_Clotes</th>
+                <th scope="col">Category</th>
+                <th scope="col">Zize</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <!-- <th scope="col">detail</th> -->
+                <th colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $i = 1; ?>
+            <?php foreach ($produk as $p) : ?>
+                <tr>
+                    <th scope="row"><?= $i; ?></th>
+                    <td><img src="<?= base_url('assets/') ?>images/produk/<?= $p->image;?>" width=50></td>
+                    <td ><?= $p->name;?></td>
+                    <td><?= $p->category; ?></td>
+                    <td><?= $p->size; ?></td>
+                    <td><?= $p->price; ?></td>
+                    <td><?= $p->stock; ?></td>
+                    <!-- <td><?= $p->detail; ?></td> -->
+                    <td>
+                        <a href="<?= base_url('produk') ?>/edit/<?= $p->id_brg ?>" class="btn btn-success btn-sm" ><i class="fas fa-search-plus"></i></a>
+                        <a href="<?= base_url('produk') ?>/detailProdukAdmin/<?= $p->id_brg ?>" class="btn btn-primary btn-sm" ><i class="fas fa-edit"></i></a>
+                        <a href="<?= base_url(); ?>produk/hapus/<?= $p->id_brg ?>" class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <?php $i++; ?>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
-<!-- /.container-fluid -->
-
-</div>
-<!-- End of Main Content --> 
 <!-- Modal -->
 
 <!-- Modal -->
@@ -138,7 +123,7 @@
       <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a id="btn-delete" class="btn btn-danger" href="<?= base_url(); ?>produk/hapus/<?= $p['id_brg']; ?>">Delete</a>
+        <a id="btn-delete" class="btn btn-danger" href="<?= base_url(); ?>produk/hapus/<?= $p->id_brg; ?>">Delete</a>
       </div>
     </div>
   </div>
