@@ -69,8 +69,8 @@
         <div class="row products_row">
           <?php foreach ($produk as $m) : ?>            
           <!-- Product 1-->
-          <div class="col-xl-4 col-md-6">
-            <div class="product">
+          <div class="col-xl-4 col-md-6 ">
+            <div class="product shadow">
               <div class="product_image"><img src="<?= base_url('assets/') ?>images/produk/<?= $m['image']; ?>" alt="" ></div>
               <div class="product_content">
                 <div class="product_info d-flex flex-row align-items-start justify-content-start">
@@ -149,4 +149,5 @@
   </div>
 </div>
 </div> -->
+
 

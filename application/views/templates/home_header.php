@@ -36,8 +36,8 @@
         
     </div>
     <div class="menu_search">
-      <form action="#" id="menu_search_form" class="menu_search_form">
-        <input type="text" class="search_input" placeholder="Search Item" required="required">
+      <form method="post" action="#" id="menu_search_form" class="menu_search_form">
+        <input type="text" class="search_input" placeholder="Search your clothes" required="required">
         <button class="menu_search_button"><img src="<?= base_url('assets/'); ?>images/search.png" alt=""></button>
       </form>
     </div>
@@ -90,16 +90,16 @@
           <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
             <!-- Search -->
             <div class="header_search">
-              <form action="#" id="header_search_form">
-                <input type="text" class="search_input" placeholder="Search Item" required="required">
-                <button class="header_search_button"><img src="<?= base_url('assets/'); ?>images/search.png" alt=""></button>
+              <form method="post" action="<?= base_url('category') ?>" >
+                <input type="text" class="search_input" placeholder="Search your clothes"  name="keyword">
+                <button type="submit" class="header_search_button"><img src="<?= base_url('assets/'); ?>images/search.png" alt=""></button>
               </form>
             </div>
             <!-- Cart -->
             <div class="user">
              <h4>
              </h4>
-              <a href="<?= base_url() ?>cart/detail_cart">
+              <a data-toggle="modal" data-target="#modalCart">
                 <div>
                   <img class="svg" src="<?= base_url('assets/'); ?>images/cart.svg" alt="https://www.flaticon.com/authors/freepik">
                     <?=
@@ -121,7 +121,7 @@
                   <a class="dropdown-item" href="<?= base_url('auth') ;?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>My Profile</a>
                   <a class="dropdown-item" href="<?= base_url('cart/') ;?>detail_cart"><i class="fas fa-cart-arrow-down mr-2 text-gray-400"></i> My Cart</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                  <a class="dropdown-item" data-toggle="modal" data-target="#modalLoginAvatar"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
                 </div>
               </div>
               <?php }elseif ($this->session->userdata('role_id')  == 1) { ?>
@@ -136,7 +136,7 @@
                   <a class="dropdown-item" href="<?= base_url('auth') ;?>"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Dasboard</a>
                   <a class="dropdown-item" href="<?= base_url('cart/') ;?>detail_cart"><i class="fas fa-cart-arrow-down mr-2 text-gray-400"></i> My Cart</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
+                  <a class="dropdown-item"  data-toggle="modal" data-target="#modalLoginAvatar"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout</a>
                 </div>
               </div>
              <?php } else { ?>
@@ -161,4 +161,89 @@
       <div class="super_overlay"></div>
 
 
+<!--Modal: Login with Avatar Form-->
+<div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+    <!--Content-->
+    <form method="post" action="<?= base_url('auth/logout'); ?>">
+   
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <img src="<?= base_url('assets/images/profile/') . $user['image']; ?>" alt="avatar" class="shadow rounded-circle img-responsive" >
+        </div>
+        <!--Body-->
+        <div class="modal-body text-center mb-1">
+          <h3 class="mt-1 mb-2">Maria Doe</h3>
+          <div class="md-form ml-0 mr-0">
+            <h5>Select "Logout" below if you are ready to end your current session.</h5>
+          </div>
+          <div class="text-center mt-4">
+           <button type="button" class="example_aa" data-dismiss="modal">Cancel</button>
+           <button type="submit" class="example_a">Logout</button>
+         </div>
+       </div>
 
+     </div>
+    </form>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: Login with Avatar Form-->
+
+
+
+<!-- Modal: modalCart -->
+<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Your cart</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Image</th>
+              <th>Product name</th>
+              <th>Price</th>
+              <th>Sub- Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $no=1; ?>
+            <?php foreach($this->cart->contents() as $i) : ?>
+            <tr>
+              <th scope="row"><?= $no++; ?></th>
+              <td><img src="<?= base_url('assets/') ?>images/produk/<?= $i['image']; ?>" width=50 ></td>
+              <td><?= $i['name'] ?></td>
+              <td align="right">Rp. <?= number_format($i['price'],0,",",".") ?></td>
+              <td align="right">Rp. <?=  number_format($i['subtotal'] ,0,",",".") ?></td>
+            </tr>
+
+            <?php endforeach; ?>
+            <tr>
+              <td colspan="4"></td>
+              <td align="right">RP.<?=  number_format($this->cart->total() ,0,",",".") ?> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer">
+        <button type="button" class="example_aa" data-dismiss="modal">Close</button>
+        <a class="example_a" href="<?= base_url('cart/') ;?>detail_cart">my cart</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal: modalCart -->

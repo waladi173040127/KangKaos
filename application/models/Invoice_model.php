@@ -66,4 +66,5 @@ class Invoice_model extends CI_Model
         $this->db->where($where);
 		$this->db->delete($table);
     }
+    
 }

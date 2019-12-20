@@ -12,6 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $data['title'] = 'Page Cart';
         $data['title2'] = 'Your Cart';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['produk'] = $this->Produk_model->tampil_data()->result();
         $this->load->view('templates/home_header', $data);
         $this->load->view('cart/detail_cart');
         $this->load->view('templates/home_footer');
@@ -20,6 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$barang = $this->Produk_model->find($id_brg);
  		$data = array(
         'id'      => $barang->id_brg,
+        'image'   => $barang->image,
         'qty'     => 1,
         'price'   => $barang->price,
         'name'    => $barang->name
@@ -27,8 +29,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			);
 
 			$this->cart->insert($data);
-			redirect('home');
+			redirect('category');
  	}
+
+     // hapus produk di keranjang
+      public function delete_invoice($rowid)
+    {
+       $data = array(
+            'rowid' => $rowid,
+            'qty' => 0
+       );
+       $this->cart->update($data);
+        redirect('cart/detail_cart');
+    }
+      public function kurangi_invoice($rowid)
+    {
+        $barang = $this->Produk_model->find($id_brg);
+        $data = array(
+            'rowid' => $rowid,
+            'qty' => 1
+       );
+       
+       $this->cart->update($data);
+        redirect('cart/detail_cart');
+    }
+   
  	public function delete_cart(){
  		$this->cart->destroy();
  		redirect('cart/detail_cart');
@@ -62,6 +87,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		}
  		
  	}
+
+   
 
  }
 

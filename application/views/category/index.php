@@ -17,10 +17,20 @@
           </ul>
         </div>
         <div class="row products_row col-lg-9">
+          <!-- jika tidak ada produk yang dicari -->
+               <?php if(empty($produk)) : ?>
+                <div class="alert alert-success" role="alert">
+                  <h4 class="alert-heading">Sorry :(</h4>
+                  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                  <hr>
+                  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                </div>
+               <?php endif; ?>
+          <!-- tampilkan semua produk -->
           <?php foreach ($produk as $m) : ?>            
           <!-- Product 1-->
           <div class="col-xl-6 col-md-4">
-            <div class="product">
+            <div class="product shadow">
               <div class="product_image"><img src="<?= base_url('assets/') ?>images/produk/<?= $m['image']; ?>" alt="" ></div>
               <div class="product_content">
                 <div class="product_info d-flex flex-row align-items-start justify-content-start">

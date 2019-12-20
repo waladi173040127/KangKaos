@@ -37,6 +37,13 @@ class Produk_model extends CI_Model
 		}
 	}
 
+	public function cariDataProduk(){
+		$keyword = $this->input->post('keyword', true);
+		$this->db->like('name', $keyword);
+		// $this->db->or_like('category', $keyword);
+		return $this->db->get('produk')->result_array();
+	}
+
 
 
 }

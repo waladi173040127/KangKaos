@@ -133,9 +133,9 @@ class Produk extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['produk'] = $this->db->get('produk')->result_array();
         $data['produk2'] = $this->Produk_model->getProdukById($id_brg);
-        $this->load->view('templates/cart_header', $data);
+        $this->load->view('templates/home_header', $data);
         $this->load->view('produk/detailProduk', $data);
-        $this->load->view('templates/cart_footer');
+         $this->load->view('templates/home_footer');
     }
     public function detailProdukAdmin($id_brg){
        $data['title'] = 'Menu Produk';

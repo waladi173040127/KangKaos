@@ -13,32 +13,38 @@
       	<?= $this->session->flashdata('message'); ?>
       	<div class="container">
 		<table class="table table-bordered table-striped table-hover">
-			<tr>
+			<tr align="center">
 				<th>NO</th>
 				<th>Name_Produk</th>
+        <th>Action</th>
 				<th>Jumlah</th>
 				<th>Harga</th>
 				<th>SUb- Total</th>
+        
 			</tr>
 			<?php $no=1; ?>
 			<?php foreach($this->cart->contents() as $i) : ?>
-				<tr>
+				<tr align="center">
 					<td><?= $no++; ?></td>
 					<td><?= $i['name'] ?></td>
-					<td><?= $i['qty'] ?></td>
+          <td>
+              <a href="<?= base_url('produk') ?>/detailProduk/<?= $i['id'] ?>" class="btn btn-primary">Detail</a>
+              <a href="<?= base_url('cart'); ?>/delete_invoice/<?= $i['rowid'] ?>" class="btn btn-danger">Delete</a>
+          </td>
+					<td><!-- <a href="<?= base_url('cart'); ?>/kurangi_invoice/<?= $i['rowid'] ?>" class="btn btn-primary" >-</a> --><?= $i['qty'] ?><!-- <a href="<?= base_url('cart') ?>/keranjang/<?= $i['id'];?>" class="btn btn-primary">+</a> --></td>
 					<td align="right">Rp. <?= number_format($i['price'],0,",",".") ?></td>
 					<td align="right">Rp. <?=  number_format($i['subtotal'] ,0,",",".") ?></td>
 				</tr>
 				
 			<?php endforeach; ?>
 			<tr>
-			<td colspan="4"></td>
+			<td colspan="5"></td>
 					<td align="right">RP.<?=  number_format($this->cart->total() ,0,",",".") ?> </td>
 			</tr>
 		</table>
 		<div align="right">
 			<div align="right">
-				<a class="example_aa" href="<?= base_url('cart') ?>/delete_cart">Clear</a>
+				<a class="example_aa"  data-toggle="modal" data-target="#myModal">Clear</a>
 				<a class="example_primary" href="<?= base_url('home') ?>">shopping</a>
          <?php if($this->session->userdata('role_id')  == 2) { ?>
 				    <a class="example_a" href="<?= base_url('cart') ?>/pay_produk" data-toggle="modal" data-target="#pay_produk">Buy</a>
@@ -121,6 +127,32 @@
           
         </div>
       </div>
+
+        <!-- Modal Penilai -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <form method="post" action="<?= base_url('cart') ?>/delete_cart">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Konfirmasi</h4>
+        </div>
+        <div class="modal-body">
+      Anda yakin mau mengosongkan Shopping Cart?
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Tidak</button>
+          <button type="submit" class="btn btn-sm btn-default">Ya</button>
+        </div>
+        
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <!--End Modal-->
 
 
 
