@@ -10,7 +10,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	public function index(){
  		$data['title'] = 'Page Invoice';
  		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['a'] = $this->db->get('invoice')->result_array();
+    
+    $data['a'] = $this->db->get('invoice')->result_array();
  		$data['invoice'] = $this->Invoice_model->tampil_data();
  		 $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);

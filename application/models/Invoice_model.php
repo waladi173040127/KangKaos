@@ -38,7 +38,7 @@ class Invoice_model extends CI_Model
 		if ($result->num_rows() >0) {
 			return $result->result();
 		}else{
-			return FALSE;
+			return false;
 		}
 	}
 

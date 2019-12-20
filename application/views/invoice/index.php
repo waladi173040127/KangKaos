@@ -9,6 +9,11 @@
 			<th>Batas Pembayaran</th>
 			<th>Aksi</th>
 		</tr>
+		<?php if($invoice == 0){ ?>
+			<div class="alert alert-warning" role="alert">
+				Tidak ada pesanan produk !
+			</div>
+		<?php }else { ?>
 		<?php foreach($invoice as $iv) : ?>
 			<tr>
 				<td><?= $iv->id_invoice?></td>
@@ -23,5 +28,6 @@
 				</td>
 			</tr>
 		<?php endforeach; ?>
+		<?php } ?>
 	</table>
 </div>
