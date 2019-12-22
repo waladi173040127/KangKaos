@@ -30,7 +30,7 @@
                     <td>
                         <a href="<?= base_url('produk') ?>/edit/<?= $p->id_brg ?>" class="btn btn-success btn-sm" ><i class="fas fa-search-plus"></i></a>
                         <a href="<?= base_url('produk') ?>/detailProdukAdmin/<?= $p->id_brg ?>" class="btn btn-primary btn-sm" ><i class="fas fa-edit"></i></a>
-                        <a href="<?= base_url(); ?>produk/hapus/<?= $p->id_brg ?>" class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></a>
+                        <a href="<?= base_url(); ?>produk/hapus/<?= $p->id_brg ?>" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda yakin ingin menghapus data ini ?')"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
                 <?php $i++; ?>

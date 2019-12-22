@@ -1,80 +1,177 @@
-<div class="home">
-			<div class="home_container d-flex flex-column align-items-center justify-content-end">
-				<div class="home_content text-center">
-					<div class="home_title">Shopping Cart</div>
-					<div class="breadcrumbs d-flex flex-column align-items-center justify-content-center">
-						<ul class="d-flex flex-row align-items-start justify-content-start text-center">
-							<li><a href="<?=base_url() ?>home">Home</a></li>
-							<li>Your Cart</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-</div>
-<br>
+<br><br><br><br><br>
 <div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<div class="">
-				
-				<img src="<?= base_url('assets/') ?>images/produk/<?= $produk2['image']; ?>" class="card-img-top" alt="...">
-			
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="product_info">
-							<div class="product_name"><?= $produk2['name']; ?></div>
-							<div class="product_category">In <a href="category.html"><?= $produk2['category']; ?></a></div>
-							<div class="product_rating_container d-flex flex-row align-items-center justify-content-start">
-								<div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
-								<div class="product_reviews">4.7 out of (3514)</div>
-								<div class="product_reviews_link"><a href="#">Reviews</a></div>
-							</div>
-							<div class="product_price"><h3>Rp. <?= number_format($produk2['price'],0,",",".");?></h3></div>
-							<div class="product_size">
-								<div class="product_size_title">Select Size</div>
-								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li>
-										<input type="radio" id="radio_1" disabled name="product_radio" class="regular_radio radio_1">
-										<label for="radio_1">XS</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_2" name="product_radio" class="regular_radio radio_2" checked>
-										<label for="radio_2">S</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_3" name="product_radio" class="regular_radio radio_3">
-										<label for="radio_3">M</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_4" name="product_radio" class="regular_radio radio_4">
-										<label for="radio_4">L</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_5" name="product_radio" class="regular_radio radio_5">
-										<label for="radio_5">XL</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_6" disabled name="product_radio" class="regular_radio radio_6">
-										<label for="radio_6">XXL</label>
-									</li>
-								</ul>
-							</div>
-							<div class="product_text">
-								<p><?= $produk2['detail']; ?>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec consequat lorem. Maecenas elementum at diam consequat bibendum. Mauris iaculis fringilla ex, sit amet semper libero facilisis sit amet. Nunc ut aliquet metus. Praesent pulvinar justo sed velit tempus bibendum. Quisque dictum lorem id mi viverra, in auctor justo laoreet. Nam at massa malesuada, ullamcorper metus vel, consequat risus. Phasellus ultricies velit vel accumsan porta.</p>
-							</div>
-							<div class="product_buttons">
-								<div class="text-right d-flex flex-row align-items-start justify-content-start">
-									<div class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center">
-										<div><span class="text-dark "><h3>BUY</h3></span></div>
-									</div>
-									<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-										<div><span class="text-dark "><h3>Back</h3></span></div>
-									</div>
-								</div>
-							</div>
-						</div>
-		</div>
-	</div>
+	<div class="container ">
+
+
+  <!--Section: Content-->
+  <section class="text-center">
+
+    <!-- Section heading -->
+    <h3 class="h2-responsive text-center  product-name font-weight-bold dark-grey-text mb-5">Product Details</h3>
+
+
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <!--Carousel Wrapper-->
+        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+
+          <!--Slides-->
+          <div class="carousel-inner text-center text-md-left" role="listbox">
+            <div class="carousel-item active">
+              <img src="<?= base_url('assets/') ?>images/produk/<?= $produk2['image']; ?>"
+                alt="First slide" class="img-fluid">
+            </div>
+            
+          </div>
+          <!--/.Slides-->
+
+          <!--Thumbnails-->
+          <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <!--/.Thumbnails-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+
+      </div>
+
+      <div class="col-lg-5 text-center text-md-left">
+
+        <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
+          <strong><?= $produk2['name']; ?></strong>
+        </h2>
+        <span class="badge badge-danger product mb-4 ml-xl-0 ml-4"><?= $produk2['category']; ?></span>
+      
+       
+        <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
+          <span class="red-text font-weight-bold">
+            <strong>Rp. <?= number_format($produk2['price'],0,",",".") ?></strong>
+          </span>
+          <span class="grey-text">
+            <small>
+              <s>Rp. 200.000</s>
+            </small>
+          </span>
+        </h3>
+
+        <!--Accordion wrapper-->
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingOne1">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                aria-controls="collapseOne1">
+                <h5 class="mb-0">
+                  Description
+                  <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+              data-parent="#accordionEx">
+              <div class="card-body">
+              	 
+               <?= $produk2['detail']; ?>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion card -->
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingTwo2">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                aria-expanded="false" aria-controls="collapseTwo2">
+                <h5 class="mb-0">
+                  Details
+                  <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+              data-parent="#accordionEx">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                3 wolf moon officia aute,
+                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon
+                tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+              </div>
+            </div>
+          </div>
+          <!-- Accordion card -->
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingThree3">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                aria-expanded="false" aria-controls="collapseThree3">
+                <h5 class="mb-0">
+                  Shipping
+                  <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
+              data-parent="#accordionEx">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                3 wolf moon officia aute,
+                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                moon
+                tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+              </div>
+            </div>
+          </div>
+          <!-- Accordion card -->
+
+        </div>
+        <!--/.Accordion wrapper-->
+
+        <!-- Add to Cart -->
+        <section class="color">
+          <div class="mt-3">
+            <div align="right">
+                 <div align="center">
+                  <a class="btn btn-primary btn-rounded" href="<?= base_url('category') ?>" ><i class="fas fa-arrow-circle-left mr-2" aria-hidden="true"></i> Back</a>
+                    <a class="btn btn-default btn-rounded" href="<?= base_url('cart') ?>/keranjang/<?= $produk2['id_brg'];?>" ><i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</a>
+              
+                </div>
+              </div>
+              
+          </div>
+        </section>
+        <!-- /.Add to Cart -->
+
+      </div>
+
+    </div>
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
 </div>
 <br>
