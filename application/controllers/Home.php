@@ -6,7 +6,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         parent::__construct();
         $this->load->model('Produk_model');
     }
-
  	public function index(){
  		$data['title'] = 'Home';
  		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -15,26 +14,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  			$data['produk'] = $this->Produk_model->cariDataProduk();
  			
  		} 
- 			$this->load->view('templates/home_header', $data); 
+ 			$this->load->view('templates/hm_header', $data); 
  			$this->load->view('home/index', $data);
- 			$this->load->view('templates/home_footer');
- 	
- 		
+ 			$this->load->view('templates/hm_footer');
  	}
- 	public function home(){
- 		$data['title'] = 'Home';
- 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
- 		$data['produk'] = $this->db->get('produk')->result_array();
- 		if($this->input->post('keyword')){
- 			$data['produk'] = $this->Produk_model->cariDataProduk();
- 			
- 		} 
- 			//$this->load->view('templates/home_header', $data); 
- 			$this->load->view('home/home', $data);
- 			//$this->load->view('templates/home_footer');
  	
- 		
- 	}
  }
 
   ?>

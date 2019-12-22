@@ -1,6 +1,6 @@
-    <!-- Home -->
-    <div class="home">
-      <!--Crousel-->
+      <!-- Home -->
+      <div class="home">
+        <!--Crousel-->
         <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -46,7 +46,8 @@
         </div>
         <!-- Home Slider Dots -->
       </div>
-    <!-- edHome -->
+      <!-- edHome -->
+       <!-- edHome -->
     <!-- Products -->
     <div class="products">
       <div class="container">
@@ -89,12 +90,12 @@
                   
                   <div class="text-right d-flex flex-row align-items-start justify-content-start">
                     <div>
-                      <a class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id_brg'];?>">
+                      <a class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center material-tooltip-main"  data-toggle="tooltip" data-placement="top" title="View Detail" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id_brg'];?>">
                         <div><div><img src="<?= base_url('assets/'); ?>/images/heart_2.svg" class="svg" alt="" ><div>+</div></div></div>
                       </a>
                     </div>
                     <div >
-                      <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('cart') ?>/keranjang/<?= $m['id_brg'];?>">
+                      <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center material-tooltip-main" data-toggle="tooltip" data-placement="top" title="Add to Cart" href="<?= base_url('cart') ?>/keranjang/<?= $m['id_brg'];?>">
                         <div><div><img src="<?= base_url('assets/'); ?>/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
                       </a> 
                     </div>
@@ -111,43 +112,188 @@
     </div>
     <!-- endProduk -->
 
-<!-- Modal -->
-<!-- data-target="#formModal" data-toggle="modal" -->
-<!-- <div class="modal fade"  id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document" >
-    <div class="modal-content" style="width: 100%">
+    <!-- tEAM -->
+    <div class="container">
 
-      <?php foreach ($produk as $p) : ?>
+
+      <!--Section: Content-->
+      <section class="team-section text-center dark-grey-text">
+
+        <!-- Section heading -->
+        <h3 class="font-weight-bold pb-2 mb-4">Our amazing team</h3>
+        <!-- Section description -->
+        <p class="text-muted w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+        eum porro a pariatur veniam.</p>
+
+        <!-- Grid row -->
+        <div class="row text-center">
+
+          <!-- Grid column -->
+          <div class="col-md-4 mb-4">
+            <div class="avatar mx-auto">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+            </div>
+            <h4 class="font-weight-bold dark-grey-text my-4">Maria Kate</h4>
+            <h6 class="text-uppercase grey-text mb-3"><strong>Photographer</strong></h6>
+            <!-- Facebook-->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <!--Dribbble -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-dribbble">
+              <i class="fab fa-dribbble"></i>
+            </a>
+            <!-- Twitter -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 mb-4">
+            <div class="avatar mx-auto">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+            </div>
+            <h4 class="font-weight-bold dark-grey-text my-4">John Doe</h4>
+            <h6 class="text-uppercase grey-text mb-3"><strong>Front-end Developer</strong></h6>
+            <!--Email-->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <!-- Facebook-->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- GitHub-->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-git">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 mb-4">
+            <div class="avatar mx-auto">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded z-depth-1-half" alt="Sample avatar">
+            </div>
+            <h4 class="font-weight-bold dark-grey-text my-4">Sarah Melyah</h4>
+            <h6 class="text-uppercase grey-text mb-3"><strong>Web Developer</strong></h6>
+            <!--Linkedin -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-li">
+              <i class="fab fa-linkedin-in "></i>
+            </a>
+            <!-- Twitter -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw">
+              <i class="fab fa-twitter "></i>
+            </a>
+            <!--Pinterest -->
+            <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-pin">
+              <i class="fab fa-pinterest "></i>
+            </a>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </section>
+      <!--Section: Content-->
+
+
+    </div>
+
+      
+
+
+    <!--Modal: Login with Avatar Form-->
+    <div class="modal fade" id="modalLoginAvatar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+      <!--Content-->
+      <form method="post" action="<?= base_url('auth/logout'); ?>">
+
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <img src="<?= base_url('assets/images/profile/') . $user['image']; ?>" alt="avatar" class="shadow rounded-circle img-responsive" >
+          </div>
+          <!--Body-->
+          <div class="modal-body text-center mb-1">
+            <h3 class="mt-1 mb-2">Maria Doe</h3>
+            <div class="md-form ml-0 mr-0">
+              <h5>Select "Logout" below if you are ready to end your current session.</h5>
+            </div>
+            <div class="text-center mt-4">
+             <button type="button" class="example_aa" data-dismiss="modal">Cancel</button>
+             <button type="submit" class="example_a">Logout</button>
+           </div>
+         </div>
+
+       </div>
+     </form>
+     <!--/.Content-->
+   </div>
+ </div>
+
+
+<!--Modal: Login with Avatar Form-->
+
+
+
+<!-- Modal: modalCart -->
+<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--Header-->
       <div class="modal-header">
-        <h5 class="modal-title" id="formModalLabel">Produk</h5>
+        <h4 class="modal-title" id="myModalLabel">Your cart</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true">×</span>
         </button>
       </div>
+      <!--Body-->
       <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="http://placehold.it/1000x1000" class="card-img-top" alt="...">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <h3 class="card-title"><?= $p['name'] ?></h3>
-                <h6><span>Rp.</span><?= $p['price'] ;?></h6>
-                  <small class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-          
         
-        </div>
-        <div class="row ">
-            <a href="<?= base_url('produk/'); ?>detailProduk/<?= $m['id'];?>" class="btn btn-success btn-block">1</a>
-          </div>
-         <?php endforeach; ?>  
-      
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Image</th>
+              <th>Product name</th>
+              <th>Price</th>
+              <th>Sub- Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $no=1; ?>
+            <?php foreach($this->cart->contents() as $i) : ?>
+            <tr>
+              <th scope="row"><?= $no++; ?></th>
+              <td><img src="<?= base_url('assets/') ?>images/produk/<?= $i['image']; ?>" width=50 ></td>
+              <td><?= $i['name'] ?></td>
+              <td align="right">Rp. <?= number_format($i['price'],0,",",".") ?></td>
+              <td align="right">Rp. <?=  number_format($i['subtotal'] ,0,",",".") ?></td>
+            </tr>
+
+            <?php endforeach; ?>
+            <tr>
+              <td colspan="4"></td>
+              <td align="right">RP.<?=  number_format($this->cart->total() ,0,",",".") ?> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!--Footer-->
+      <div class="modal-footer">
+        <button type="button" class="example_aa" data-dismiss="modal">Close</button>
+        <a class="example_a" href="<?= base_url('cart/') ;?>detail_cart">my cart</a>
+      </div>
     </div>
   </div>
 </div>
-</div> -->
+<!-- Modal: modalCart --
 
-
+  
