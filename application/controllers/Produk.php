@@ -123,6 +123,7 @@ class Produk extends CI_Controller
     {
         $where = array('id_brg' => $id_brg);
          $this->Produk_model->delete_produk($where,'produk');
+         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Delete success!</div>');
         redirect('produk');
     }
 
