@@ -4,11 +4,12 @@
     <div class="row">
     	<div class="col-lg-3">
     		<div class="list-group">
-    			<a href="<?= base_url('category/') ?>man" class="list-group-item list-group-item-action active">
+                <a href="#" class="list-group-item list-group-item-action active">Category</a>
+    			<a href="<?= base_url('category/') ?>man" class="list-group-item list-group-item-action">
     				Man
     			</a>
     			<a href="<?= base_url('category/') ?>woman" class="list-group-item list-group-item-action">Woman</a>
-    			<a href="#" class="list-group-item list-group-item-action">Child</a>
+    			
     			
     			
     		</div>
