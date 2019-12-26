@@ -12,6 +12,9 @@
             <div class="col-md-8">
                 <table class="table">
                     <tr>
+                        <td><strong><a href="<?= base_url('admin') ?>" class="btn btn-primary">Back</a><strong></td>
+                    </tr>
+                    <tr>
                         <td> Name Produk</td>
                         <td><strong><?= $p->name ?></strong></td>
                     </tr>

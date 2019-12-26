@@ -34,6 +34,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  		$this->load->view('category/man', $data);
  		$this->load->view('templates/hm_footer');
  	}
+ 	public function womanAdmin(){
+ 		$data['title'] = 'Woman';
+ 		$data['title2'] = 'Popular on Woman';
+ 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+ 		$data['woman'] = $this->Category_model->data_woman()->result();
+ 		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('category/womanAdmin', $data);
+        $this->load->view('templates/footer');
+ 	}
+ 	public function manAdmin(){
+ 		$data['title'] = 'Man';
+ 		$data['title2'] = 'Popular on Man';
+ 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+ 		 $data['produk'] = $this->db->get('produk')->result_array();
+ 		$data['man'] = $this->Category_model->data_man()->result();
+ 		$this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('category/manAdmin', $data);
+        $this->load->view('templates/footer');
+ 	}
  }
 
   ?>

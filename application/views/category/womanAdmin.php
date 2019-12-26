@@ -8,18 +8,18 @@
                 <a href="<?= base_url('admin') ?>" class="list-group-item list-group-item-action">
                     All
                 </a>
-    			<a href="<?= base_url('category/') ?>manAdmin" class="list-group-item list-group-item-action">
-    				Man
-    			</a>
-    			<a href="<?= base_url('category/') ?>womanAdmin" class="list-group-item list-group-item-action">Woman</a>
-    			
-    			
-    			
-    		</div>
+                <a href="<?= base_url('category/') ?>manAdmin" class="list-group-item list-group-item-action">
+                    Man
+                </a>
+                <a href="<?= base_url('category/') ?>womanAdmin" class="list-group-item list-group-item-action">Woman</a>
+                
+                
+                
+            </div>
     	</div>
     	 <div class="col-lg-9">
     	 	<div class="row">
-    	 		<?php foreach($produk as $p) :?>
+    	 		<?php foreach($woman as $p) :?>
     	 			<div class="col-lg-4 col-md-6 mb-4">
     	 				<div class="card h-80">
     	 					<a href="#"><img class="card-img-top" src="<?= base_url('assets/') ?>images/produk/<?= $p->image; ?>" alt=""></a>
