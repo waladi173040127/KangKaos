@@ -9,7 +9,7 @@
                   <div class="footer_menu">
                     <div class="footer_title"><img src="<?= base_url('assets/') ?>images/logo/logo.png" width=250></div>
                     <div class="footer_about_text">
-                      <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Fusce venenatis vel velit vel euismod.</p>
+                      <p>kangkaos is an online store that sells a variety of men's and women's shirts</p>
                     </div>
                   </div>
                 </div>

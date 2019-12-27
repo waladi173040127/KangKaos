@@ -7,7 +7,7 @@
 		<div class="col-md-6">
 			
 				<h3>Enter Your Address</h3>
-				<form method="post">
+				<form method="post" action="<?= base_url('cart/pay_produk') ?>">
 
 					<!-- Material input -->
 					<div class="md-form ">

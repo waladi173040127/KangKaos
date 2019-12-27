@@ -12,10 +12,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $data['title'] = 'Page Cart';
         $data['title2'] = 'Your Cart';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['produk'] = $this->Produk_model->tampil_data()->result();
+
         $this->load->view('templates/hm_header', $data);
         $this->load->view('cart/detail_cart');
         $this->load->view('templates/hm_footer');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sorry, your cart still empty.</div>');
     }
  	public function keranjang($id_brg){
 
@@ -75,13 +76,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->form_validation->set_rules('nama', 'Name', 'required');
         $this->form_validation->set_rules('addres', 'Address', 'required');
         $this->form_validation->set_rules('noHp', 'noHp', 'required');
+        // $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        // $produk = $this->Invoice_model->getIdProdukByUser($user['id'])->result();
          if ($this->session->userdata('email')) {
              if ($this->form_validation->run() == FALSE)
                 {
                   $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
                   $data['title'] = 'Pay Produk';
                   $this->load->view('templates/hm_header', $data);
-                  $this->load->view('cart/pay_produk');
+                  $this->load->view('cart/pay_produk', $data);
                   $this->load->view('templates/hm_footer');
                 }
                 else
@@ -92,9 +95,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                  $is_processed = $this->Invoice_model->index();
                  if ($is_processed) {
                   $this->cart->destroy();
-                    // $this->load->view('templates/home_header', $data);
-                  $this->load->view('cart/send_produk');
-                    // $this->load->view('templates/home_footer');
+                  $this->load->view('templates/hm_header', $data);
+                  $this->load->view('cart/detail_cart', $data);
+                   $this->load->view('templates/hm_footer');
                    }else {
                   echo "Maat pesananan anda gagal diproses";
                   }
@@ -104,10 +107,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $this->session->set_flashdata('message2', '<div class="alert alert-success" role="alert">please, login before you pay your produk !</div>');
               redirect('auth');
         }
- 	}
- 	public function send_produk(){
-       
- 		
  	}
 
    

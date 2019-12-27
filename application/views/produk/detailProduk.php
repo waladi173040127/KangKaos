@@ -1,12 +1,13 @@
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 <div class="container">
-	<div class="container ">
+	<div class="container card">
 
 
   <!--Section: Content-->
   <section class="text-center">
 
     <!-- Section heading -->
+    <br>
     <h3 class="h2-responsive text-center  product-name font-weight-bold dark-grey-text mb-5">Product Details</h3>
 
 
@@ -151,16 +152,17 @@
         <form method="post" action="<?= base_url('cart') ?>/keranjang/<?= $produk2['id_brg'];?>">
           <!-- Add to Cart -->
           <section class="color">
-            <input type="number" name="qty" class="">
+            <div class="mt-3">
+              <label>Quantity :</label>
+              <input type="number" name="qty"  >
+            </div>
             <div class="mt-3">
               <div align="right">
                <div align="center">
                 <a class="btn btn-primary btn-rounded" href="<?= base_url('category') ?>" ><i class="fas fa-arrow-circle-left mr-2" aria-hidden="true"></i> Back</a>
                 <button class="btn btn-default btn-rounded" type="submit" ><i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
-
               </div>
             </div>
-
           </div>
         </section>
         </form>
