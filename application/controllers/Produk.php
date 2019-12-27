@@ -14,6 +14,9 @@ class Produk extends CI_Controller
         $data['title'] = 'Menu Produk';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['produk'] = $this->Produk_model->tampil_data()->result();
+        if($this->input->post('keyword')){
+            $data['produk']= $this->Produk_model->cariDataProdukAdmin();
+        }
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('size', 'Size', 'required');
         $this->form_validation->set_rules('price', 'Price', 'required');
@@ -31,7 +34,7 @@ class Produk extends CI_Controller
             $upload_image = $_FILES['image']['name'];
 
             if ($upload_image) {
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_size']      = '2048';
                 $config['upload_path'] = './assets/images/produk/';
 
@@ -85,7 +88,7 @@ class Produk extends CI_Controller
                     unlink(FCPATH . 'assets/images/produk/' . $old_image);
                 }
 
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_size']     = '2048';
                 $config['upload_path'] = './assets/images/produk/';
 

@@ -1,7 +1,27 @@
 <div class="container-fluid">
     <?= $this->session->flashdata('message'); ?>
-    <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#dataProduk"><i class="fas fa-plus fa-sm"></i>Add New Produk</a>
-    <table class="table table-bordered">
+    <a href="" class="btn btn-primary " data-toggle="modal" data-target="#dataProduk"><i class="fas fa-plus fa-sm"></i>Add New Produk</a>
+     <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="post" action="<?= base_url('produk')?>">
+                        <div class="input-group">
+                          <input type="text" class="form-control bg-light border-2 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" name="keyword">
+                          <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                              <i class="fas fa-search fa-sm"></i>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+    <table class="table table-bordered mt-3">
+        <!-- jika tidak ada produk yang dicari -->
+               <?php if(empty($produk)) : ?>
+                <div class="alert alert-success" role="alert">
+                  <h4 class="alert-heading">Maaf :(</h4>
+                  <p>Kaos tidak ditemukan</p>
+                  <hr>
+                  
+                </div>
+               <?php endif; ?>
         <thead>
             <tr>
                 <th scope="col">No</th>
@@ -29,7 +49,9 @@
                     <!-- <td><?= $p->detail; ?></td> -->
                     <td>
                         <a href="<?= base_url('produk') ?>/edit/<?= $p->id_brg ?>" class="btn btn-success btn-sm" ><i class="fas fa-edit"></i></a>
+
                         <a href="<?= base_url('produk') ?>/detailProdukAdmin/<?= $p->id_brg ?>" class="btn btn-primary btn-sm" ><i class=" fas fa-search-plus"></i></a>
+
                         <a href="<?= base_url(); ?>produk/hapus/<?= $p->id_brg ?>" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda yakin ingin menghapus data ini ?')"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>

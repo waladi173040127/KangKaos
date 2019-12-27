@@ -1,5 +1,6 @@
       
       <!-- Home -->
+
       <div >
       <div class="bd-example">
           <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -28,6 +29,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h1>First slide label</h1>
                   <h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+
                 </div>
               </div>
             </div>
