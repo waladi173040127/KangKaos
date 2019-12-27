@@ -14,6 +14,9 @@ class Produk extends CI_Controller
         $data['title'] = 'Menu Produk';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['produk'] = $this->Produk_model->tampil_data()->result();
+        if($this->input->post('keyword')){
+            $data['produk']= $this->Produk_model->cariDataProdukAdmin();
+        }
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('size', 'Size', 'required');
         $this->form_validation->set_rules('price', 'Price', 'required');
