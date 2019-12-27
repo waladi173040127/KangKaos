@@ -1,93 +1,97 @@
-<div class="products">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-          <div class="section_title text-center">Popular on Little Closet</div>
-        </div>
-      </div>
-      <div class="row page_nav_row">
-          <div class="col">
-            <div class="page_nav">
-              <ul class="d-flex flex-row align-items-start justify-content-center">
-                <li class="active"><a href="<?= base_url('category') ?>">All</a></li>
-                <li><a href="<?= base_url('category') ?>/woman">Women</a></li>
-                <li><a href="<?= base_url('category') ?>/men">Men</a></li>
-              </ul>
-            </div>
-          </div>
-      </div>
-      <div class="row">
-        <div class="row products_row">
-          <?php foreach ($produk as $m) : ?>            
-          <!-- Product 1-->
-          <div class="col-xl-4 col-md-6">
-            <div class="product">
-              <div class="product_image"><img src="<?= base_url('assets/') ?>images/produk/<?= $m['image']; ?>" alt="" ></div>
-              <div class="product_content">
-                <div class="product_info d-flex flex-row align-items-start justify-content-start">
-                  <div>
-                    <div>
-                      <div class="product_name"><a href="product.html"><?= $m['name']; ?></a></div>
-                      <div class="product_category">Catagory <a href="category.html"><?= $m['category']; ?></a></div>
-                    </div>
-                  </div>
-                  <div class="ml-auto text-right">
-                    <div class="rating_r rating_r_4 home_item_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="product_price text-right"><h4>Rp. <?= number_format($m['price'],0,",",".");?></h4></div>
-                  </div>
-                </div>
-                <div class="product_buttons">
-                  
-                  <div class="text-right d-flex flex-row align-items-start justify-content-start">
-                    <div>
-                      <a class="product_button product_fav text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('produk') ?>/detailProduk/<?= $m['id_brg'];?>">
-                        <div><div><img src="<?= base_url('assets/'); ?>/images/heart_2.svg" class="svg" alt="" ><div>+</div></div></div>
-                      </a>
-                    </div>
-                    <div >
-                      <a class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" href="<?= base_url('cart') ?>/keranjang/<?= $m['id_brg'];?>">
-                        <div><div><img src="<?= base_url('assets/'); ?>/images/cart.svg" class="svg" alt=""><div>+</div></div></div>
-                      </a> 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- EndProduk 1 -->
-         <?php endforeach; ?>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?>
+
+            <?= $this->session->flashdata('message'); ?>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Menu</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; ?>
+                    <?php foreach ($menu as $m) : ?>
+                    <tr>
+                        <th scope="row"><?= $i; ?></th>
+                        <td><?= $m['menu']; ?></td>
+                        <td>
+                            <a href="<?= base_url('menu'); ?>/ubah/<?= $m['id'] ?>" class="badge badge-success " >edit</a>
+                            <a href="<?= base_url('menu'); ?>/hapusMenuUtama/<?= $m['id'] ?>" class="badge badge-danger" onclick="return confirm('apakah anda yakin ingin menghapus data ini ?')">delete</a>
+                        </td>
+                    </tr>
+                    <?php $i++; ?>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+
+
         </div>
     </div>
+
 </div>
+<!-- /.container-fluid -->
 
- 
-            
-          
+</div>
+<!-- End of Main Content --> 
 <!-- Modal -->
-<div class="modal fade"  id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document" >
-    <div class="modal-content" style="width: 100%">
-      <div class="modal-header">
-        <h5 class="modal-title" id="formModalLabel">Nama Produk</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <img src="http://placehold.it/800x600" class="card-img-top" alt="...">
-      <div class="modal-body form">
-        
-        <div class="card-body">
-            <h5 class="card-title">Kaos Gaul cuk</h5>
-                <h6>RP.20.000</h6>
-                  <small class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-          <div class="modal-footer" >
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
-            <a href="#" class="btn btn-danger">AddToCart</a>
 
-          </div>
+<!-- Modal -->
+<div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newMenuModalLabel">Add New Menu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('menu'); ?>" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
+</div> 
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newMenuModalLabel">Edit Menu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+             <!-- <form action="<?= BASEURL;?>/mahasiswa/tambah" method="post"> -->
+            <form action="<?= base_url('menu'); ?>" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

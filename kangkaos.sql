@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2019 at 10:22 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Waktu pembuatan: 27 Des 2019 pada 13.29
+-- Versi server: 10.4.8-MariaDB
+-- Versi PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,16 +21,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `kangkaos`
 --
-CREATE DATABASE IF NOT EXISTS `kangkaos` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `kangkaos`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `invoice`
+-- Struktur dari tabel `invoice`
 --
 
-DROP TABLE IF EXISTS `invoice`;
 CREATE TABLE `invoice` (
   `id_invoice` int(11) NOT NULL,
   `nama` varchar(56) NOT NULL,
@@ -40,7 +37,7 @@ CREATE TABLE `invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `invoice`
+-- Dumping data untuk tabel `invoice`
 --
 
 INSERT INTO `invoice` (`id_invoice`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
@@ -55,10 +52,9 @@ INSERT INTO `invoice` (`id_invoice`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesanan`
+-- Struktur dari tabel `pesanan`
 --
 
-DROP TABLE IF EXISTS `pesanan`;
 CREATE TABLE `pesanan` (
   `id` int(11) NOT NULL,
   `id_invoice` int(11) NOT NULL,
@@ -70,7 +66,7 @@ CREATE TABLE `pesanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pesanan`
+-- Dumping data untuk tabel `pesanan`
 --
 
 INSERT INTO `pesanan` (`id`, `id_invoice`, `id_brg`, `name`, `jumlah`, `harga`, `pilihan`) VALUES
@@ -118,9 +114,8 @@ INSERT INTO `pesanan` (`id`, `id_invoice`, `id_brg`, `name`, `jumlah`, `harga`, 
 (56, 73, 73, 'Kaos 1', 1, 50000, '');
 
 --
--- Triggers `pesanan`
+-- Trigger `pesanan`
 --
-DROP TRIGGER IF EXISTS `pesanan_penjualan`;
 DELIMITER $$
 CREATE TRIGGER `pesanan_penjualan` AFTER INSERT ON `pesanan` FOR EACH ROW BEGIN
 	UPDATE produk SET stock = stock-NEW.jumlah
@@ -132,12 +127,11 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
-DROP TABLE IF EXISTS `produk`;
 CREATE TABLE `produk` (
-  `id_brg` int(64) NOT NULL,
+  `id_brg` int(128) NOT NULL,
   `name` varchar(30) NOT NULL,
   `price` int(20) NOT NULL,
   `category` varchar(20) NOT NULL,
@@ -148,33 +142,38 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`id_brg`, `name`, `price`, `category`, `size`, `detail`, `stock`, `image`) VALUES
-(78, 'Kaos Oblong / Programmer/ Game', 100000, 'Man', 'L', 'Kaosnya anak IT', 100, 'IT.jpg'),
-(79, 'KaosYES Kaos Polos T-Shirt RAG', 75000, 'Man', 'M', 'Raglan T-Shirt\r\nDidesain trendy dalam 2 tone color\r\nRound neckline\r\nMaterial : Cotton combed 24s', 60, '2.jpg'),
-(80, 'Kaos Polos Katun Pria Lengan P', 80000, 'Man', 'L', 'Kaos Polos Pria ', 25, '3.jpg'),
+(78, 'Kaos Oblong / Programmer', 100000, 'Man', 'L', 'Kaosnya anak IT', 100, 'IT1.jpg'),
+(79, 'KaosYES Kaos Polos T-Shirt RAG', 75000, 'Man', 'M', 'Raglan T-ShirtDidesain trendy dalam 2 tone colorRound necklineMaterial : Cotton combed 24s', 60, 'ka31.png'),
+(80, 'hh', 90000, 'Man', 'M', 'Kaos Polos Pria ', 30, '31.jpg'),
 (81, 'Dua tone warna polos t shirt', 50000, 'Man', 'M', 'Kaos Polos Pria 2 Warna', 30, '4.png'),
 (82, 'JatiDiri SUNDA t - shirt', 80000, 'Man', 'L', 'Kaos Khusus urang sunda nu nya’ah kanu budaya sareng adat SUNDA', 30, '5.jpg'),
 (83, 'Hoodie Hip Hop T-shirt Jaket k', 35000, 'Man', 'ML', 'Lengan Panjang (cm):Pendek\r\nGaya:Kasual\r\nTipe Pola:cetak\r\nTipe Kain:Kain Lebar\r\nMaterials:100% Premium Cotton\r\nFeatures:Soft,Eco', 45, '6.jpg'),
-(84, 'Kaos Kartu 94', 20000, 'Man', 'M', 'Warna (1): Hitam', 10, '7.jpg'),
-(85, 'O-Neck Polos Kaos Pria - Putih', 45000, 'Man', 'M', 'Didesain comfy dalam slim fit style\r\nRound neckline\r\nMaterial : Cotton twill', 10, '8.jpg'),
-(86, 'Kaos Naruto 95', 50000, 'Man', 'L', 'Cotton Combed 20s / 30sJahitan:Standart DistroGambar:Digital Printing', 35, '9.jpg'),
-(87, 'Kaos Misfits fiend club versio', 40000, 'Man', 'L', 'Bahan Kaos:Cotton Combed 20s / 30sJahitan:Standart DistroGambar:Sablon Manual dengan tinta rubber, lebih pekat, le', 35, '10.jpg'),
-(88, 'ELLIPSES.INC Tumblr Tee / T-Sh', 75000, 'Woman', 'M', 'Cotton Combed 30sBahan Dijamin AdemSablon Tahan LamaUntuk Berat Badan 40-65 KGNyaman DipakaiKaos Kekinian', 60, '111.jpg'),
-(89, 'BAJU KAOS GHOST SNAPCHAT O-NEC', 85000, 'Woman', 'M', 'BAJU KAOS GHOST SNAPCHAT O-NECK FOR CEWEK TUMBLR TEE T-SHIRTBahan Cotton Combed BUKAN Matt Spandex!!', 10, '121.jpg'),
-(90, 'Kaos Wanita - RedMango', 100000, 'Woman', 'L', 'ramasi 24s (ketebalan sedang)Model kaos O-Neck, dengan jahitan sampingJahitan rantai dobel yang rapi dan kuatUkuran kaos m', 50, '131.jpg'),
-(91, 'YGTSHIRT - T-shirt ALWAYS LATE', 50000, 'Woman', 'L', 'Bahan tebal &amp; nyaman dipakaiNON gerah, bahan tidak panasSangat nyaman dipakai untuk Hang Out dan tampil gaya dimana saja', 30, '141.jpg'),
-(92, 'Women\'s Shoes and Clothing', 50000, 'Woman', 'L', 'Merek: YutakaSKU: YU284FAAAWISVLANID-73763370Jenis Garansi: Tidak Ada GaransiJenis Kerah: Leher OJenis Lengan: Lengan Pe', 50, '15.jpg');
+(84, 'Kaos Kartu 94 - Sekop', 20000, 'Man', 'M', 'Warna (1): Hitam', 10, '7.jpg'),
+(85, 'O-Neck Polos ', 45000, 'Man', 'M', 'Didesain comfy dalam slim fit styleRound necklineMaterial : Cotton twill', 10, '8.jpg'),
+(86, 'Kaos Naruto 95 - Hitam - Kaos ', 50000, 'Man', 'L', 'Cotton Combed 20s / 30sJahitan:Standart DistroGambar:Digital Printing', 35, '9.jpg'),
+(87, 'Kaos Misfits fiend club versio', 40000, 'Man', 'L', 'Bahan Kaos:Cotton Combed 20s / 30sJahitan:Standart DistroGambar:Sablon Manual dengan tinta rubber, lebih pekat, le', 35, '101.jpg'),
+(89, 'BAJU KAOS GHOST SNAPCHAT O-NEC', 85000, 'Woman', 'M', 'BAJU KAOS GHOST SNAPCHAT O-NECK FOR CEWEK TUMBLR TEE T-SHIRTBahan Cotton Combed BUKAN Matt Spandex!!', 10, '122.jpg'),
+(91, 'YGTSHIRT - T-shirt ALWAYS LATE', 50000, 'Woman', 'L', 'Bahan tebal &amp; nyaman dipakaiNON gerah, bahan tidak panasSangat nyaman dipakai untuk Hang Out dan tampil gaya dimana saja', 30, '133.jpg'),
+(92, 'Women\'s Shoes and Clothing', 50000, 'Woman', 'L', 'Merek: YutakaSKU: YU284FAAAWISVLANID-73763370Jenis Garansi: Tidak Ada GaransiJenis Kerah: Leher OJenis Lengan: Lengan Pe', 50, '143.jpg'),
+(93, 'Binx - Kaos Wanita - Kaos Cewe', 40000, 'Woman', 'L', '- Bahan Premium Cotton 20s/30s- Sablon Polyflex High Quality- P 62 cm- LD 84 cm- Kaos Cewe Tidak Berlaku Promo Beli 3 da', 50, '151.jpg'),
+(94, 'Kaos cewek uniqlo', 45000, 'Woman', 'M', 'Kaos cewek edisi Marylin Monroe Merek uniqloSize LLingkar baju 94cmPanjang baju 59cm', 12, '16.jpg'),
+(95, 'JCLOTHES Kaos Cewe / Tumblr Te', 72000, 'Woman', 'M', 'all size,S,M,L,XL,XXL, READY STOCKBobot200 gram', 26, '17.jpg'),
+(96, 'T-Shirt / Tumblr Tee / Kaos Wa', 50000, 'Woman', 'M', 'UKURAN -ALL SIZE FIT TO LLD 90 CM, PJG 60 CMBahan : cotton berkualitas dijamin ademWarna : sesuai pict', 32, '19.jpg'),
+(97, 'Tumblr Tee T-Shirt Kaos Wanita', 85000, 'Woman', 'L', 'Ukuran : ALL SIZE FIT TO LLD (lingkar dada): 90 cmP (panjang): 60 cmBahan: Cotton combed 30s', 10, '20.jpg'),
+(98, 'Tumblr Tee T-Shirt', 70000, 'Woman', 'L', '- nyaman dipakai- bahan tidak panas- Sangat nyaman dipakai untuk Hang Out dan tampil gaya dimana saja- ALL SIZE FIT TO L', 25, '21a.jpg'),
+(99, 'C0NVESS / Kaos Cewe', 35000, 'Woman', 'L', '- Elegant,stylist,Mewah dan Murah\r\n- Ready Stock,\r\n- Nyaman di Pakai,dan nyerap keringat\r\n- Bisa pilih Size Sesuai Keinginan\r\n- ', 34, '23.jpg'),
+(101, 'KAOS CEWE * YANG PERNTING SOMB', 10000000, 'Woman', 'L', 'baju cewe kekinian', 100, '24.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
@@ -187,7 +186,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
@@ -204,10 +203,9 @@ INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
+-- Struktur dari tabel `user_access_menu`
 --
 
-DROP TABLE IF EXISTS `user_access_menu`;
 CREATE TABLE `user_access_menu` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
@@ -215,7 +213,7 @@ CREATE TABLE `user_access_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user_access_menu`
+-- Dumping data untuk tabel `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
@@ -227,17 +225,16 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_menu`
+-- Struktur dari tabel `user_menu`
 --
 
-DROP TABLE IF EXISTS `user_menu`;
 CREATE TABLE `user_menu` (
   `id` int(11) NOT NULL,
   `menu` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user_menu`
+-- Dumping data untuk tabel `user_menu`
 --
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
@@ -249,17 +246,16 @@ INSERT INTO `user_menu` (`id`, `menu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
-DROP TABLE IF EXISTS `user_role`;
 CREATE TABLE `user_role` (
   `id` int(11) NOT NULL,
   `role` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -269,10 +265,9 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_sub_menu`
+-- Struktur dari tabel `user_sub_menu`
 --
 
-DROP TABLE IF EXISTS `user_sub_menu`;
 CREATE TABLE `user_sub_menu` (
   `id` int(11) NOT NULL,
   `menu_id` int(11) NOT NULL,
@@ -283,7 +278,7 @@ CREATE TABLE `user_sub_menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user_sub_menu`
+-- Dumping data untuk tabel `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
@@ -294,15 +289,15 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
 (7, 1, 'Produk', 'produk/index', 'fas fa-fw fa-user-tie', 1),
 (8, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1),
-(9, 1, 'Invoices', 'invoice/index', 'fas fa-file-invoice', 1);
+(9, 1, 'Invoices', 'invoice/index', 'fas  fa-fw fa-file-invoice', 1),
+(10, 1, 'Role', 'admin/role', 'fas  fa-fw fa-user', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_token`
+-- Struktur dari tabel `user_token`
 --
 
-DROP TABLE IF EXISTS `user_token`;
 CREATE TABLE `user_token` (
   `id` int(11) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -315,113 +310,113 @@ CREATE TABLE `user_token` (
 --
 
 --
--- Indexes for table `invoice`
+-- Indeks untuk tabel `invoice`
 --
 ALTER TABLE `invoice`
   ADD PRIMARY KEY (`id_invoice`);
 
 --
--- Indexes for table `pesanan`
+-- Indeks untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_brg`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_access_menu`
+-- Indeks untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_menu`
+-- Indeks untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_sub_menu`
+-- Indeks untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_token`
+-- Indeks untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `invoice`
+-- AUTO_INCREMENT untuk tabel `invoice`
 --
 ALTER TABLE `invoice`
   MODIFY `id_invoice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
--- AUTO_INCREMENT for table `pesanan`
+-- AUTO_INCREMENT untuk tabel `pesanan`
 --
 ALTER TABLE `pesanan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_brg` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id_brg` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `user_access_menu`
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `user_menu`
+-- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user_sub_menu`
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `user_token`
+-- AUTO_INCREMENT untuk tabel `user_token`
 --
 ALTER TABLE `user_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
