@@ -148,20 +148,22 @@
 
         </div>
         <!--/.Accordion wrapper-->
+        <form method="post" action="<?= base_url('cart') ?>/keranjang/<?= $produk2['id_brg'];?>">
+          <!-- Add to Cart -->
+          <section class="color">
+            <input type="number" name="qty" class="">
+            <div class="mt-3">
+              <div align="right">
+               <div align="center">
+                <a class="btn btn-primary btn-rounded" href="<?= base_url('category') ?>" ><i class="fas fa-arrow-circle-left mr-2" aria-hidden="true"></i> Back</a>
+                <button class="btn btn-default btn-rounded" type="submit" ><i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
 
-        <!-- Add to Cart -->
-        <section class="color">
-          <div class="mt-3">
-            <div align="right">
-                 <div align="center">
-                  <a class="btn btn-primary btn-rounded" href="<?= base_url('category') ?>" ><i class="fas fa-arrow-circle-left mr-2" aria-hidden="true"></i> Back</a>
-                    <a class="btn btn-default btn-rounded" href="<?= base_url('cart') ?>/keranjang/<?= $produk2['id_brg'];?>" ><i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</a>
-              
-                </div>
               </div>
-              
+            </div>
+
           </div>
         </section>
+        </form>
         <!-- /.Add to Cart -->
 
       </div>

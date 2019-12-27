@@ -18,18 +18,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->load->view('templates/hm_footer');
     }
  	public function keranjang($id_brg){
+
  		$barang = $this->Produk_model->find($id_brg);
+    $qty =1;
+    if ($this->input->post('qty')) {
+      $qty =$this->input->post('qty');
+    }
  		$data = array(
         'id'      => $barang->id_brg,
         'category'      => $barang->category,
         'image'   => $barang->image,
-        'qty'     => 1,
+        'qty'     => $qty,
         'price'   => $barang->price,
         'name'    => $barang->name
         
 			);
-
-			$this->cart->insert($data);
+      foreach($this->cart->contents() as $item){
+        if ($item['id_brg'] == $id_brg) {
+          $qty += $item['qty'];
+        }
+      }
+      if ($qty <= $barang->stock) {
+        $this->cart->insert($data);
+      }
 			redirect('category');
  	}
 
