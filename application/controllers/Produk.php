@@ -82,12 +82,12 @@ class Produk extends CI_Controller
             if($upload_image){
                 $old_image = $data['produk']['image'];
                 if($old_image != 'default.jpg'){
-                    unlink(FCPATH . 'assets/images/profile/' . $old_image);
+                    unlink(FCPATH . 'assets/images/produk/' . $old_image);
                 }
 
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size']     = '2048';
-                $config['upload_path'] = './assets/images/profile/';
+                $config['upload_path'] = './assets/images/produk/';
 
                 $this->load->library('upload', $config);
 
