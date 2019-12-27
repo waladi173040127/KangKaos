@@ -10,6 +10,6 @@ class Category_model extends CI_Model
 
 	public function data_man(){
 		return $this->db->get_where('produk', array('category' => 
-				'man'));
+				'Man'));
 	}
 }
