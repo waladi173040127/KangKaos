@@ -69,7 +69,7 @@
                 <td></td>
                 <td>Rp. <?= number_format($i['price'],0,",",".") ?></td>
                 <td>
-                  <input type="number" value="<?= $i['qty'] ?>" aria-label="Search" class="form-control" style="width: 100px">
+                  <?= $i['qty'] ?>
                 </td>
                 <td >
                   Rp. <?=  number_format($i['subtotal'] ,0,",",".") ?>
@@ -101,7 +101,7 @@
                   <a class="example_aa"  data-toggle="modal" data-target="#myModal">Clear</a>
                   <a class="example_primary" href="<?= base_url('home') ?>">shopping</a>
                   <?php if($this->session->userdata('role_id')  == 2) { ?>
-                    <a class="example_a" href="<?= base_url('cart') ?>/pay_produk" data-toggle="modal" data-target="#pay_produk">Buy</a>
+                    <a class="example_a" href="<?= base_url('cart') ?>/pay_produk/">Buy</a>
                   <?php }else { ?>
                     <a class="example_a" href="<?= base_url('cart') ?>/pay_produk" >Buy</a>
                   <?php } ?>
@@ -149,9 +149,9 @@
           			echo "Tolal belanjaan anda : Rp." .number_format($grand_total,0,",",".");
           			?>
           		</h4>
-          	</div>
+          </div>
           <div class="modal-body">
-            <form method="post" action="<?= base_url('cart') ?>/send_produk">
+            <form method="post" action="<?= base_url('cart/pay_produk') ?>">
             	<div class="form-group">
             		<label>Full Name</label>
             		<input type="text"  name="nama" placeholder="Full name" class="form-control" value="<?= set_value('nama'); ?>">

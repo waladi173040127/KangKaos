@@ -3,7 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Invoice_model extends CI_Model
 {
-	
+	public function getIdProdukByUser($id_brg){
+		$result = $this->db->get_where('produk', ['id_brg' => $id_brg]);
+		if ($result->num_rows() >0) {
+			return $result->result();
+		}else{
+			return false;
+		}
+	}
 	public function index(){
 		date_default_timezone_set('Asia/Jakarta');
 		$nama = $this->input->post('nama');
@@ -28,9 +35,13 @@ class Invoice_model extends CI_Model
 				'jumlah' => $i['qty'],
 				'harga' => $i['price']
 			);
+			$barang =$this->db->get_where('produk', ['id_brg' => $i['id'] ])->row_array();
 			$this->db->insert('pesanan', $data);
-			return TRUE;
+			$this->db->update('produk', ['stock' => ($barang['stock'] - $i['qty'])], ['id_brg' => $i['id']]);
+			
+			
 		}
+		return true;
 	}
 
 	public function tampil_data(){

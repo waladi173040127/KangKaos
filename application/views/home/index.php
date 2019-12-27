@@ -1,50 +1,50 @@
+      
       <!-- Home -->
-      <div class="home">
-        <!--Crousel-->
-        <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="<?= base_url('assets') ?>/images/logo/jumbotron.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/1500x650" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/1500x650" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <!-- Home Slider Dots -->  
-        <div class="home_slider_dots_container">
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <div class="home_slider_dots">
-                  <ul id="home_slider_custom_dots" class="home_slider_custom_dots d-flex flex-row align-items-center justify-content-center">
-                    <li class="home_slider_custom_dot active">01</li>
-                    <li class="home_slider_custom_dot">02</li>
-                    <li class="home_slider_custom_dot">03</li>
-                    <li class="home_slider_custom_dot">04</li>
-                  </ul>
+
+      <div >
+      <div class="bd-example">
+          <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+              <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="<?= base_url('assets/images/baner/3.jpg') ?>" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>First slide label</h1>
+                  <h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="<?= base_url('assets/images/baner/3.jpg') ?>" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>First slide label</h1>
+                  <h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="<?= base_url('assets/images/baner/3.jpg') ?>" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>First slide label</h1>
+                  <h3>Nulla vitae elit libero, a pharetra augue mollis interdum.</h3>
+
                 </div>
               </div>
             </div>
-          </div>  
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
         </div>
-        <!-- Home Slider Dots -->
+        <!--Crousel-->
+  
       </div>
       <!-- edHome -->
        <!-- edHome -->
@@ -122,9 +122,7 @@
         <!-- Section heading -->
         <h3 class="font-weight-bold pb-2 mb-4">Our amazing team</h3>
         <!-- Section description -->
-        <p class="text-muted w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
-        eum porro a pariatur veniam.</p>
+        <p class="text-muted w-responsive mx-auto mb-5">"Didalam tubuh yang sehat terdapat jiwa yang santui"</p>
 
         <!-- Grid row -->
         <div class="row text-center">
