@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $this->load->view('templates/hm_header', $data);
         $this->load->view('cart/detail_cart');
         $this->load->view('templates/hm_footer');
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sorry, your cart still empty.</div>');
+       
     }
  	public function keranjang($id_brg){
 
@@ -55,18 +55,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        $this->cart->update($data);
         redirect('cart/detail_cart');
     }
-      public function kurangi_invoice($rowid)
-    {
-        $barang = $this->Produk_model->find($id_brg);
-        $data = array(
-            'rowid' => $rowid,
-            'qty' => 1
-       );
+    //   public function kurangi_invoice($rowid)
+    // {
+    //     $barang = $this->Produk_model->find($id_brg);
+    //     $data = array(
+    //         'rowid' => $rowid,
+    //         'qty' => 1
+    //    );
        
-       $this->cart->update($data);
-        redirect('cart/detail_cart');
-    }
+    //    $this->cart->update($data);
+    //     redirect('cart/detail_cart');
+    // }
    
+
+   // clear semua produk di keranjang
  	public function delete_cart(){
  		$this->cart->destroy();
  		redirect('cart/detail_cart');
@@ -98,15 +100,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   $this->load->view('templates/hm_header', $data);
                   $this->load->view('cart/detail_cart', $data);
                    $this->load->view('templates/hm_footer');
+                  
                    }else {
                   echo "Maat pesananan anda gagal diproses";
                   }
                 }
              
         } else {
-            $this->session->set_flashdata('message2', '<div class="alert alert-success" role="alert">please, login before you pay your produk !</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">please, login before you pay your produk !</div>');
               redirect('auth');
         }
+          $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">pay produk success !</div>');
  	}
 
    

@@ -74,7 +74,7 @@
               <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
                 aria-controls="collapseOne1">
                 <h5 class="mb-0">
-                  Description
+                  Detail
                   <i class="fas fa-angle-down rotate-icon"></i>
                 </h5>
               </a>
@@ -94,56 +94,7 @@
           <!-- Accordion card -->
           <div class="card">
 
-            <!-- Card header -->
-            <div class="card-header" role="tab" id="headingTwo2">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-                aria-expanded="false" aria-controls="collapseTwo2">
-                <h5 class="mb-0">
-                  Details
-                  <i class="fas fa-angle-down rotate-icon"></i>
-                </h5>
-              </a>
-            </div>
-
-            <!-- Card body -->
-            <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-              data-parent="#accordionEx">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                moon
-                tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-              </div>
-            </div>
-          </div>
-          <!-- Accordion card -->
-
-          <!-- Accordion card -->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header" role="tab" id="headingThree3">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-                aria-expanded="false" aria-controls="collapseThree3">
-                <h5 class="mb-0">
-                  Shipping
-                  <i class="fas fa-angle-down rotate-icon"></i>
-                </h5>
-              </a>
-            </div>
-
-            <!-- Card body -->
-            <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
-              data-parent="#accordionEx">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                3 wolf moon officia aute,
-                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                moon
-                tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-              </div>
-            </div>
+            
           </div>
           <!-- Accordion card -->
 
@@ -154,7 +105,7 @@
           <section class="color">
             <div class="mt-3">
               <label>Quantity :</label>
-              <input type="number" name="qty"  >
+              <input type="number" name="qty"  value="1">
             </div>
             <div class="mt-3">
               <div align="right">

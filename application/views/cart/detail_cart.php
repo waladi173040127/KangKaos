@@ -69,7 +69,7 @@
                 <td></td>
                 <td>Rp. <?= number_format($i['price'],0,",",".") ?></td>
                 <td>
-                  <input type="number" value="<?= $i['qty'] ?>" aria-label="Search" class="form-control" style="width: 100px">
+                  <?= $i['qty'] ?>
                 </td>
                 <td >
                   Rp. <?=  number_format($i['subtotal'] ,0,",",".") ?>
